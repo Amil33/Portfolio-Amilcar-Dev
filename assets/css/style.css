@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+
 }
 
 p {
@@ -46,6 +47,10 @@ main {
     max-height: 500px;
 }
 
+#carouselLarge1, #carouselLarge2, #carouselLarge3 {
+    display: none;
+}
+
 .profileContainer {
     position: absolute;
     z-index: 1;
@@ -60,6 +65,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .profileContainer H1 {
     text-shadow: 2px 2px 10px #333;
@@ -98,19 +104,20 @@ main {
 
 .serviciosIconContainer {
     display: flex;
-    width: 15%;
+    width: 10%;
     justify-content: center;
     align-items: flex-start;
 
 }
 .servicioIcon {
-    width: 50px;
+    width: 30px;
     padding-top: 20px;
     color: #eee;
 }
 
 .serviciosContent {
-    width: 75%;
+    width: 90%;
+    padding: 0 30px 0 0;
 }
 
 
@@ -134,3 +141,82 @@ main {
     color: #eee;
     border-radius: 15px;
 }
+
+
+/* --------------------------------------------------------------------*/
+/* ---------------- Seccion de media Querys ---------------------------*/
+
+/* ---- Seccion del navbar ---------*/
+@media (min-width: 1024px) {
+    .navLink {
+        padding: 10px;
+    }
+}
+
+/* ---- Medias del Carrousel --- */
+@media (min-width: 1024px) {
+    #carouselLarge1, #carouselLarge2, #carouselLarge3 {
+        display: block;
+    }
+
+    #carouselSmall {
+    display: none;
+    }
+}
+
+
+/* ---------------- Seccion de disponibilidad ------------*/
+@media (min-width: 768px) {
+    .disponibilidadSeccion {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+/* ------------------ Seccion de servicios ------------------*/
+
+@media (min-width: 768px) {
+    .servicios {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/*-------------------------------------------------------------------------*/
+/* -----------------------  Estilo de Proyectos ---------------------------*/
+
+/* Estilo para dispositivos móviles (1 columna) */
+.portfolioWrapper {
+    min-height: 100dvh;
+}
+
+.proyectosContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.proyectosGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+}
+
+.proyecto {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 5px auto;
+}
+
+.proyectoIconos i {
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+
+/* Media query para pantallas más grandes */
+
+
