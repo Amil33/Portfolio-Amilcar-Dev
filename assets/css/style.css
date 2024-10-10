@@ -25,6 +25,13 @@ nav {
     background-color: #48e;
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
 .navbarIcon {
     width: 50px;
 }
@@ -183,11 +190,22 @@ main {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------*/
 /* -----------------------  Estilo de Proyectos ---------------------------*/
 
 /* Estilo para dispositivos móviles (1 columna) */
 .portfolioWrapper {
+    max-width: 100dvw;
     min-height: 100dvh;
 }
 
@@ -195,20 +213,37 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 0 0 30px 0;
 }
 
 .proyectosGrid {
     display: grid;
     grid-template-columns: 1fr;
+    width: 95%;
+    margin: auto;
     max-width: 1300px;
+    gap: 12px;
 }
 
 .proyecto {
-    background-color: #f9f9f9;
+    display: grid;
+    place-content: center;
+    color: #eee;
+    text-shadow: 2px 2px 2px #333;
     border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px #333;
     text-align: center;
-    margin: 5px auto;
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(#3339, #3339), url(../images/carousel/mafiaCat.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.proyecto:hover {
+    opacity: 0.60;
+    box-shadow: 0px 2px 10px #eeee;
 }
 
 .proyectoIconos i {
@@ -217,6 +252,148 @@ main {
 }
 
 
-/* Media query para pantallas más grandes */
+/* Media query de portfolio */
+
+@media (min-width: 600px) {
+    .proyectosGrid {
+        grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    }
+    .proyectoUno {
+        grid-column: span 2;
+    }
+    .proyectoSeis {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1000px) {
+    .proyectosGrid {
+        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    }
+    .proyectoUno {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .proyectoSeis {
+        grid-column: span 4;
+    }
+}
 
 
+
+
+
+
+
+/*---------------------------------------------------------*/
+/*----------- Estilos de Sobre mi ------------------------*/
+.sobreMiWrapper {
+    text-align: center;
+}
+
+.profileWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImgContainer {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.profileImgContainer img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.profileDataContainer {
+    max-width: 600px;
+    padding: 12px;
+}
+
+.profileDescription {
+    text-align: justify;
+}
+
+.profileSkillsContainer {
+    margin: auto;
+}
+
+.profileSkillsContainer ul {
+    padding: 0;
+    margin: 0;
+}
+
+.profileSkill {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    list-style: none;
+    width: 95%;
+    margin: 5px;
+}
+
+.loadBar {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2px;
+    width: 100%;
+    margin: 4px;
+    text-align: center;
+    margin: 5px;
+}
+
+.load {
+    background-color: #eee;
+    color: #48e;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.bar10 {
+    width: 15%;
+}
+
+.bar0 {
+    width: 8%;
+}
+
+.bar30 {
+    width: 30%;
+}
+
+.bar40 {
+    width: 40%;
+}
+
+.bar60 {
+    width: 60%;
+}
+/* ----- Seccion de certificaciones ------ */
+.certificadosSection {
+    margin: 20px;
+}
+
+.collapse {
+    margin-top: 10px;
+    align-items: center;
+}
+.collapse ul{
+    padding: 0;
+}
+.collapse ul li {
+    list-style: none;
+}
+
+.collapse ul li a {
+    text-decoration: none;
+    color: #eee;
+}
+
+.certificadosWeb, .certificadosDiseño {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
