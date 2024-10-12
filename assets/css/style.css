@@ -2,13 +2,10 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-
 }
-
 p {
     font-size: 14px;
 }
-
 body{
     display: flex;
     flex-direction: column;
@@ -18,20 +15,22 @@ body{
     max-height: 100dvh;
     background-color: #48e;
     color: #eee;
+    padding-top: 70px;
 }
-
 /* -------- Seccion del navbar ------------*/
 nav {
     background-color: #48e;
 }
-
 .navbar {
     position: fixed;
     top: 0;
     z-index: 1000;
     width: 100%;
+    padding: 5px 10px 5px 0 ;
 }
-
+.navbar-collapse {
+    width: 100%;
+}
 .navbarIcon {
     width: 50px;
 }
@@ -39,25 +38,20 @@ nav {
     color: #eee;
     text-decoration: none;
 }
-
 /* --------- Seccion principal ----------- */
 main {
     flex: 1;
 }
-
 .carrousel {
     max-width: 100%;
     z-index: 0;
 }
-
 .carrouselImg {
     max-height: 500px;
 }
-
 #carouselLarge1, #carouselLarge2, #carouselLarge3 {
     display: none;
 }
-
 .profileContainer {
     position: absolute;
     z-index: 1;
@@ -78,27 +72,22 @@ main {
     text-shadow: 2px 2px 10px #333;
     text-align: center;
 }
-
 .profileImg {
     width: 150px;
     margin: 20px 0 20px 0;
 }
-
 /* ------------ Seccion de disponibilidad --------- */
-
 .disponibilidadSeccion {
     background-color: #eee;
     color: #48e;
     padding: 10px 10px 0 10px;
 }
-
 .freelancerIcon {
     width: 20px;
 }
 .contratoIcon {
     width: 20px;
 }
-
 /* ------------ Seccion de Servicios -------- */
 .serviciosWD , .serviciosDW {
     background-color: #34e8;
@@ -108,27 +97,21 @@ main {
     margin: 5px;
     font-size: 10px;
 }
-
 .serviciosIconContainer {
     display: flex;
     width: 10%;
     justify-content: center;
     align-items: flex-start;
-
 }
 .servicioIcon {
     width: 30px;
     padding-top: 20px;
     color: #eee;
 }
-
 .serviciosContent {
     width: 90%;
     padding: 0 30px 0 0;
 }
-
-
-
 /* -------Sección del footer ----------*/
 .footer {
     display: flex;
@@ -136,42 +119,31 @@ main {
     justify-content: center;
     align-items: start;
 }
-
-
 .footerIcon {
     width: 30px;
 }
-
 .footerButton {
     background-color: #34e8;
     border: 1px solid #333;
     color: #eee;
     border-radius: 15px;
 }
-
-
-/* --------------------------------------------------------------------*/
-/* ---------------- Seccion de media Querys ---------------------------*/
-
+/* ---------- Queries de Home  --------------------*/
 /* ---- Seccion del navbar ---------*/
 @media (min-width: 1024px) {
     .navLink {
         padding: 10px;
     }
 }
-
 /* ---- Medias del Carrousel --- */
 @media (min-width: 1024px) {
     #carouselLarge1, #carouselLarge2, #carouselLarge3 {
         display: block;
     }
-
     #carouselSmall {
     display: none;
     }
 }
-
-
 /* ---------------- Seccion de disponibilidad ------------*/
 @media (min-width: 768px) {
     .disponibilidadSeccion {
@@ -180,9 +152,7 @@ main {
         justify-content: space-evenly;
     }
 }
-
 /* ------------------ Seccion de servicios ------------------*/
-
 @media (min-width: 768px) {
     .servicios {
         display: flex;
@@ -200,22 +170,20 @@ main {
 
 
 
-/*-------------------------------------------------------------------------*/
-/* -----------------------  Estilo de Proyectos ---------------------------*/
+/*-------------------------------------------------------------*/
+/* ----------------  Estilo de Proyectos ------------------*/
 
 /* Estilo para dispositivos móviles (1 columna) */
 .portfolioWrapper {
     max-width: 100dvw;
     min-height: 100dvh;
 }
-
 .proyectosContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 0 0 30px 0;
 }
-
 .proyectosGrid {
     display: grid;
     grid-template-columns: 1fr;
@@ -224,7 +192,6 @@ main {
     max-width: 1300px;
     gap: 12px;
 }
-
 .proyecto {
     display: grid;
     place-content: center;
@@ -245,15 +212,11 @@ main {
     opacity: 0.60;
     box-shadow: 0px 2px 10px #eeee;
 }
-
 .proyectoIconos i {
     margin-right: 5px;
     font-size: 24px;
 }
-
-
-/* Media query de portfolio */
-
+/* Media query de proyectos */
 @media (min-width: 600px) {
     .proyectosGrid {
         grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
@@ -265,7 +228,6 @@ main {
         grid-column: span 2;
     }
 }
-
 @media (min-width: 1000px) {
     .proyectosGrid {
         grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
@@ -285,47 +247,46 @@ main {
 
 
 
-/*---------------------------------------------------------*/
-/*----------- Estilos de Sobre mi ------------------------*/
+/*-----------------------------------------------------*/
+/*----------- Estilos de Sobre mi --------------------*/
 .sobreMiWrapper {
     text-align: center;
 }
-
+.profile {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+}
 .profileWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
-
 .profileImgContainer {
     max-height: 400px;
     overflow: hidden;
 }
-
 .profileImgContainer img {
     width: 100%;
     max-width: 600px;
 }
-
 .profileDataContainer {
-    max-width: 600px;
+    width: 600px;
+    max-width: 100%;
     padding: 12px;
 }
-
-.profileDescription {
-    text-align: justify;
+.profileDescription p {
+    text-align: center;
 }
-
 .profileSkillsContainer {
     margin: auto;
 }
-
 .profileSkillsContainer ul {
     padding: 0;
     margin: 0;
 }
-
 .profileSkill {
     display: flex;
     flex-direction: column-reverse;
@@ -334,7 +295,6 @@ main {
     width: 95%;
     margin: 5px;
 }
-
 .loadBar {
     border: 1px solid #eee;
     border-radius: 8px;
@@ -344,30 +304,24 @@ main {
     text-align: center;
     margin: 5px;
 }
-
 .load {
     background-color: #eee;
     color: #48e;
     border-radius: 4px;
     padding: 4px 6px;
 }
-
 .bar10 {
     width: 15%;
 }
-
 .bar0 {
     width: 8%;
 }
-
 .bar30 {
     width: 30%;
 }
-
 .bar40 {
     width: 40%;
 }
-
 .bar60 {
     width: 60%;
 }
@@ -375,7 +329,6 @@ main {
 .certificadosSection {
     margin: 20px;
 }
-
 .collapse {
     margin-top: 10px;
     align-items: center;
@@ -386,14 +339,47 @@ main {
 .collapse ul li {
     list-style: none;
 }
-
 .collapse ul li a {
     text-decoration: none;
     color: #eee;
 }
-
 .certificadosWeb, .certificadosDiseño {
     display: flex;
     flex-direction: column;
     margin: 20px;
+}
+/*--------------  Queries de Sobre mi -------------------*/
+@media (min-width:600px) {
+    .profileWrapper {
+        flex-direction: row;
+        max-height: 1100px;
+        height: 100%;
+        width: 95%;
+        margin: auto;
+        background-color: #26b;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+    .profileImgContainer {
+        height: 100%;
+        max-height: 100%;
+
+    }
+    .profileImgContainer img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+    }
+    .profileDataContainer {
+        width: 80%;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+}
+@media (min-width:800px) {
+
+    .footer {
+        margin-top: 200px;
+    }
 }
