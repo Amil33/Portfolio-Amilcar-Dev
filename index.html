@@ -9,6 +9,8 @@
     <script defer src="assets/js/main.js"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CDN para librería Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Titulo -->
@@ -16,29 +18,37 @@
     <link rel="icon" href="assets/images/imgPerfil.png" type="image/png">
 </head>
 <body>
+
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg container-fluid">
+            <div class="container justify-content-around"> <!-- Contenedor de los elementos-->
                 <!-- Logo -->
-                <a class="navbar-brand" href="#">
-                    <img src="assets/images/imgPerfil.png" alt="Logo de Amilcar Dev" class="d-inline-block aling-text-top navbarIcon">
-                </a>
-                <!-- Boton movile de menu desplegable-->
+                <div class="column text-center">
+                    <a class="navbar-brand p-0 m-0" href="#">
+                        <p class="p-0 m-0">"Dando vida a tus ideas online"</p>
+                    </a>
+                </div>
+                
+                <!-- Botón móvil de menú desplegable -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <!-- Menú desplegable -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="navbarItem">
-                            <a class="navLink" href="pages/proyectos.html">Proyectos</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
                         </li>
-                        <li class="navbarItem">
-                            <a class="navLink" href="pages/sobreMi.html">Sobre mi</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Proyectos</a>
                         </li>
-                        <li class="navbarItem">
-                            <a class="navLink" href="pages/contactame.html">Contactame</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre mí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contáctame</a>
                         </li>
                     </ul>
                 </div>
@@ -46,156 +56,299 @@
         </nav>
     </header>
 
-    <main class="position-relative">
-        <!-- Este es el carrousel para vista en moviles -->
-        <div id="carouselSmall" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 1">
+    <main>
+        <div class="portfolio__wrapper container-fluid d-flex-column p-0 align-items-center text-center">
+            <section class="hero__container d-flex flex-column">
+                <div class="column">
+                    <!-- Este es la vista prinicpal de quien soy-->
+                    <div class="hero__profile text-center">
+                        <h1>Amilcar Noel Alsina, Desarrollador Web</h1>
+                        <p>En constante formación</p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 2">
+                <div class="hero__Info d-flex flex-column flex-grow-1">
+                    <div class="text-center hero__disponibilidad my-auto">
+                        <!-- En esta seccion doy a informar mi disponibilidad -->
+                        <div class="hero__freelancer d-flex flex-row justify-content-center align-items-center p-3 my-auto">
+                            <img class="hero__Icon-fl" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
+                            <p class="m-0">Disponible para contrataciones</p>
+                        </div>
+                        <div class="hero__contrato d-flex flex-row justify-content-center align-items-center p-3 my-auto">
+                            <img class="hero__Icon-c" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
+                            <p class="m-0">Disponible para encargos Freelancer</p>
+                        </div>
+                        <a class="btn btn--contact p-2 m-4" href="#" role="button"><strong>Contáctame</strong></a>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 3">
+                <div class="mt-auto">
+                    <img src="assets/images/perfilMovileNoBg.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img-fluid">
                 </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSmall" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselSmall" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <!-- Fin del carrousel para vista en moviles -->
-        <!-- Carrousel para vista en escritorio -->
-        <section class="carouselLargeContainer">
-            <div class="row g-0">
-                <!-- Primera parte de tres-->
-                <div class="col-md-4">
-                    <div id="carouselLarge1" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 1">
+                <!-- Fin de la Hero section -->
+            </section>
+            <!-- Inicia la seccion de proyectos -->
+            <section class="proyectos__container">
+                <!-- Aquí colocaré los tipos de servicios que puedo ofrecer actualmente -->
+                <div class="container text-center my-2">
+                    <h3>Servicios</h3>
+                    <div class="d-flex-column justify-content-center">
+                        <div class="servicios__wd">
+                            <div class="servicios__icon-container">
+                                <img class="servicios__icon" src="assets/images/iconoDeDiseño.png" alt="Icono de servicio de diseño">
                             </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 2">
+                            <div class="servicios__content">
+                                <h4>Diseño Web</h4>
+                                <p>Reunión en videollamada para hablar del proyecto, asesorar y realizar una muestra rápida.</p>
                             </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 3">
+                        </div>
+                        <div class="servicios__dw">
+                            <div class="servicios__icon-container">
+                                <img class="servicios__icon" src="assets/images/programacionWebIcon.png" alt="Icono del servicio de desarrollo web">
+                            </div>
+                            <div class="serviciosContent">
+                                <h4>Desarrollo Web</h4>
+                                <p>Estructura completa del proyecto, estilado del sitio, animaciones e interactividad.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Segunda parte de tres -->
-                <div class="col-md-4">
-                    <div id="carouselLarge2" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 3">
-                            </div>
+                <h1>Portfolio de Amilcar Dev</h1>
+                <div class="proyectos__grid">
+                    <div class="proyectos proyecto__uno">
+                        <h3>Proyecto 1</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
                         </div>
                     </div>
-                </div>
-                <!-- Tercera parte de tres-->
-                <div class="col-md-4">
-                    <div id="carouselLarge3" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/dragonLogo.png" class="d-block w-100 carrouselImg" alt="Imagen 3">
-                            </div>
+                    <!-- Inicia otro proyecto -->
+                    <div class="proyectos proyecto__dos">
+                        <h3>Proyecto 2</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
                         </div>
                     </div>
+                    <!-- Inicia otro proyecto -->
+                    <div class="proyectos proyecto__tres">
+                        <h3>Proyecto 3</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <!-- Inicia otro proyecto -->
+                    <div class="proyectos proyecto__cuatro">
+                        <h3>Proyecto 4</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <!-- Inicia otro proyecto -->
+                    <div class="proyectos proyecto__cinco">
+                        <h3>Proyecto 5</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <!-- Inicia otro proyecto -->
+                    <div class="proyectos proyecto__seis">
+                        <h3>Proyecto 6</h3>
+                        <p> Descripcion del proyecto</p>
+                        <div class="proyectos__iconos">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <!-- Inicia otro proyecto -->
                 </div>
+            </section>
+            <!-- Fin de la sección de proyectos -->
+            <!-- Inicia la sección de Sobre mi-->
+            <section>
+                <div>
+                    <div class="profile__img-container">
+                        <img src="assets/images/dragonLogo.png">
+                    </div>
+                    <div class="profile__data-container">
+                        <div>
+                            <div>
+                                <h1>¿Quies es Amilcar Alsina?</h1>
+                                <p>Soy un apasionado de la tecnología que está en proceso de profesionalización en el desarrollo front-end. Actualmente, me encuentro cursando un programa especializado en Front End en CoderHouse, donde continúo expandiendo mis habilidades técnicas. Además, estoy complementando mi formación aprendiendo sobre UI y Back-end, no solo para mejorar la calidad de mi trabajo, sino también por mi interés y fascinación por la tecnología.
+                                <br>
+                                <br>
+                                Aspiro a obtener un título en Ciencias de Datos, lo que me permitirá integrar aún más mi enfoque analítico con mi experiencia en desarrollo web. Además, después de haber trabajado 9 años en la Fuerza de Seguridad (GNA), he desarrollado habilidades blandas clave como la comunicación efectiva y el trabajo en equipo</p>
+                            </div>
+                            <h2>Habilidades y experiencias</h2>
+                            <div class="profile__skills-container">
+                                <ul>
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar10">
+                                                1
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Webs de práctica</span>
+                                    </li>
         
-                <div class="col-md-4">
-                    <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Copia el contenido del carrusel aquí -->
-                    </div>
-                </div>
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar0">
+                                                0
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Webs para clientes</span>
+                                    </li>
         
-                <div class="col-md-4">
-                    <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Copia el contenido del carrusel aquí -->
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar30">
+                                                Básico
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">HTML, CSS y JS</span>
+                                    </li>
+        
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar40">
+                                                <i class="fab fa-bootstrap"></i>
+                                                <i class="fab fa-sass"></i>
+                                                <i class="fab fa-git-alt"></i>
+                                                <i class="fab fa-wordpress"></i>
+        
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Herramientas</span>
+                                    </li>
+        
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar30">
+                                                Básico
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Diseño, UX y UI</span>
+                                    </li>
+        
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar0">
+                                                0
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Experiencia laboral (Años)</span>
+                                    </li>
+        
+                                    <li class="profile__skills">
+                                        <div class="load__bar">
+                                            <div class="load bar60">
+                                                Intermedio
+                                            </div>
+                                        </div>
+                                        <span class="profileSkillName">Comunicacion y trabajo en equipo</span>
+                                    </li>
+        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="certificados__container d-flex-column align-items-center">
+                    <h3>Certificaciones</h3>
+                    <div class="certificados__web">
+                        <button class="btn btn--web" type="button" data-bs-toggle="collapse" data-bs-target="#certDesarrollo" aria-expanded="false" aria-controls="certDesarrollo">
+                            Desarrollo Web (Front-end)
+                        </button>
+                        <div class="collapse" id="certDesarrollo">
+                            <ul>
+                                <li><a href="#">Desarrollo Web (CoderHouse)</a></li>
+                                <li><a href="#">JavaScript (Coder House)</a></li>
+                                <li><a href="#">React (CoderHouse)</a></li>
+                                <!-- Añade más certificados aquí -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="certificados__design">
+                        <button class="btn btn--design" type="button" data-bs-toggle="collapse" data-bs-target="#certDiseño" aria-expanded="false" aria-controls="certDiseño">
+                                Diseño, UX y UI
+                        </button>
+                        <div class="collapse" id="certDiseño">
+                            <ul>
+                                <li><a href="#">Proximamente...</a></li>
+                                <!-- Añade más certificados aquí -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Este es la vista prinicpal de quien soy-->
-        <div class="profileContainer">
-            <h1>Amilcar Noel Alsina</h1>
-            <img src="assets/images/imgPerfil.png" alt="Foto de perfil de Amilcar Noel Alsina" class="profileImg">
-            <h2>Desarrollador Web Trainee</h2>
+            </section>
+            <section class="form">
+                <form id="miFormulario" class="container" novalidate>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required aria-label="Nombre completo">
+                        <div class="invalid-feedback">
+                            Por favor, ingresa tu nombre completo.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
+                        <div class="invalid-feedback">
+                            Por favor, introduce un correo electrónico válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje" required aria-label="Mensaje"></textarea>
+                        <div class="invalid-feedback">
+                            El mensaje no puede estar vacío.
+                        </div>
+                    </div>
+                    <!-- Honeypot (Campo oculto para bots) -->
+                    <div class="honeypot">
+                        <label for="website" class="form-label">Website (Dejar en blanco)</label>
+                        <input type="text" id="website" name="website" class="form-control" placeholder="No llenar este campo">
+                    </div>
+                    <div id="mensajeExito" class="alert alert-success d-none" role="alert">
+                        ¡Mensaje enviado con éxito!
+                    </div>
+                    <button type="submit" class="btn btn--submit btn-lg w-100">Enviar</button>
+                </form>
+            </section>
+            <div class="espaciador"> <!-- Este div solo genera un espacio--></div>
         </div>
     </main>
 
-    <section class="text-center disponibilidadSeccion">
-        <!-- En esta seccion doy a informar mi disponibilidad -->
-        <div class="disponibilidadFreelancer">
-            <img class="freelancerIcon" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
-            <p>Disponible para contrataciones</p>
-        </div>
-        <div class="disponibilidadContratacion">
-            <img class="contratoIcon" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
-            <p>Disponible para encargos Freelancer</p>
-        </div>
-    </section>
-
-    <section class="container text-center my-2">
-        <!-- Aquí colocaré los tipos de servicios que puedo ofrecer actualmente -->
-        <h3>Servicios</h3>
-        <div class="servicios d-flex-column justify-content-center">
-            <div class="serviciosWD">
-                <div class="serviciosIconContainer">
-                    <img class="servicioIcon" src="assets/images/iconoDeDiseño.png" alt="Icono de servicio de diseño">
-                </div>
-                <div class="serviciosContent">
-                    <h4>Diseño Web</h4>
-                    <p>Reunión en videollamada para hablar del proyecto, asesorar y realizar una muestra rápida.</p>
-                </div>
-            </div>
-            <div class="serviciosDW">
-                <div class="serviciosIconContainer">
-                    <img class="servicioIcon" src="assets/images/programacionWebIcon.png" alt="Icono del servicio de desarrollo web">
-                </div>
-                <div class="serviciosContent">
-                    <h4>Desarrollo Web</h4>
-                    <p>Estructura completa del proyecto, estilado del sitio, animaciones e interactividad.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="footer">
+    <footer class="footer row text-center align-items-center p-1">
         <!-- Enlaces relevantes a redes y CV en formato .pdf descargable -->
-            <div class="mb-3">
-                <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="me-3">
-                    <img src="assets/images/gitHubIcon.png" alt="Icono de Git Hub" class="footerIcon">
+            <div class="col-5">
+                <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="m-1">
+                    <img src="assets/images/gitHubIcon.png" alt="Icono de Git Hub" class="footer__icon">
                 </a>
-                <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer" class="me-3">
-                    <img src="assets/images/linkedinIcon.png" alt="Icono de Linkedin" class="footerIcon">
+                <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer" class="m-1">
+                    <img src="assets/images/linkedinIcon.png" alt="Icono de Linkedin" class="footer__icon">
                 </a>
             </div>
-            <div>
-                <a href="assets/cv.pdf" class="btn footerButton" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
+            <div class="col-7">
+                <button class="btn btn--cv">
+                    <a href="assets/cv.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
+                </button>
             </div>
     </footer>
+    <!-- Fin del Footer -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
