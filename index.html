@@ -11,20 +11,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- CDN para librería Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Montserrat y Roboto-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Titulo -->
-    <title>Amilcar Dev</title>
+    <title>Amilcar Portfolio</title>
     <link rel="icon" href="assets/images/imgPerfil.png" type="image/png">
 </head>
 <body>
 
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg container-fluid">
-            <div class="container justify-content-around"> <!-- Contenedor de los elementos-->
+        <nav class="navbar navbar-expand-lg container-fluid d-flex justify-content-between">
                 <!-- Logo -->
-                <div class="column text-center">
+                <div class="navbar__brand-container column text-center">
                     <a class="navbar-brand p-0 m-0" href="#">
                         <p class="p-0 m-0">"Dando vida a tus ideas online"</p>
                     </a>
@@ -32,186 +33,174 @@
                 
                 <!-- Botón móvil de menú desplegable -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fs-1 fas fa-bars"></i>
                 </button>
                 
                 <!-- Menú desplegable -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav text-sm-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Inicio</a>
+                            <a class="nav-link" href="#">
+                                <p>Inicio</p>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Proyectos</a>
+                            <a class="nav-link" href="#">
+                                <p>Proyectos</p>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre mí</a>
+                            <a class="nav-link" href="#">
+                                <p>Sobre mí</p>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contáctame</a>
+                            <a class="nav-link" href="#">
+                                <p>Contáctame</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </div>
         </nav>
     </header>
 
     <main>
         <div class="portfolio__wrapper container-fluid d-flex-column p-0 align-items-center text-center">
-            <section class="hero__container d-flex flex-column">
-                <div class="column">
-                    <!-- Este es la vista prinicpal de quien soy-->
-                    <div class="hero__profile text-center">
-                        <h1>Amilcar Noel Alsina, Desarrollador Web</h1>
-                        <p>En constante formación</p>
+            <section class="hero__container d-flex flex-column justify-content-end flex-md-row align-items-md-center">
+                <!-- Esta es la parte mas importante del Hero Section-->
+                <div class="hero__primary d-flex flex-column col-sm-12 col-md-6 col-lg-7 col-xxl-5 offset-xxl-1 mt-auto"> 
+                    <div class="hero__info text-center">
+                        <p class="fs-1">¡Hola! Yo soy</p>
+                        <h1>Amilcar Noel Alsina</h1>
+                        <p><strong>Programador Web Front End</strong></p>
+                    </div>
+                    <div class="p-2">
+                        <p class="w-60">
+                            Me apasiona crear sitios web modernos y accesibles con diseños responsivos, me esfuerzo cada día por mejorar mis habilidades y adquirir nuevas herramientas.</p>
+                    </div>
+                    <div>
+                        <p class="fw-bold">
+                            Trabajemos en tus próximos proyectos.
+                        </p>
+                        <button class="btn btn__contact">
+                            <i class="fas fa-laptop-code"></i>
+                            <span class="fw-bold">Contactame</span>
+                        </button>
                     </div>
                 </div>
-                <div class="hero__Info d-flex flex-column flex-grow-1">
-                    <div class="text-center hero__disponibilidad my-auto">
-                        <!-- En esta seccion doy a informar mi disponibilidad -->
-                        <div class="hero__freelancer d-flex flex-row justify-content-center align-items-center p-3 my-auto">
-                            <img class="hero__Icon-fl" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
-                            <p class="m-0">Disponible para contrataciones</p>
+                <!-- Esta es la parte decorativa del Hero Section-->
+                <div class="col-sm-12 col-md-6 col-lg-5 col-xxl-5 offset-xxl-1 mt-auto">
+                    <div class="hero__secundary d-flex flex-column">
+                        <div class="hero__img-profile-container d-flex align-items-end justify-content-center">
+                            <div class="img-profile__fondo mt-auto mx-auto"></div>
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="assets/images/perfilDesktopNoBg.png">
+                                <img src="assets/images/perfilMovileNoBg.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img__profile mt-auto img-fluid">
+                            </picture>
                         </div>
-                        <div class="hero__contrato d-flex flex-row justify-content-center align-items-center p-3 my-auto">
-                            <img class="hero__Icon-c" src="assets/images/checkIcon.png" alt="Icono de disponibilidad">
-                            <p class="m-0">Disponible para encargos Freelancer</p>
-                        </div>
-                        <a class="btn btn--contact p-2 m-4" href="#" role="button"><strong>Contáctame</strong></a>
+                            <!-- Doy a informar mi disponibilidad -->
+                            <div class="d-flex flex-column hero__disponibilidad">
+                                <div class="hero__freelancer d-flex flex-row justify-content-center align-items-center p-3 mt-auto">
+                                    <i class="fas fa-check me-2 hero__icon-fl fs-1"></i>
+                                    <p class="m-0">Disponible para contrataciones</p>
+                                </div>
+                                <div class="hero__contrato d-flex flex-row justify-content-center align-items-center p-3 mt-auto">
+                                    <i class="fas fa-check me-2 hero__icon-c fs-1"></i>
+                                    <p class="m-0">Disponible para encargos Freelancer</p>
+                                </div>
+                            </div>
                     </div>
-                </div>
-                <div class="mt-auto">
-                    <img src="assets/images/perfilMovileNoBg.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img-fluid">
                 </div>
                 <!-- Fin de la Hero section -->
             </section>
             <!-- Inicia la seccion de proyectos -->
-            <section class="proyectos__container">
-                <!-- Aquí colocaré los tipos de servicios que puedo ofrecer actualmente -->
-                <div class="container text-center my-2">
-                    <h3>Servicios</h3>
-                    <div class="d-flex-column justify-content-center">
-                        <div class="servicios__wd">
-                            <div class="servicios__icon-container">
-                                <img class="servicios__icon" src="assets/images/iconoDeDiseño.png" alt="Icono de servicio de diseño">
-                            </div>
-                            <div class="servicios__content">
-                                <h4>Diseño Web</h4>
-                                <p>Reunión en videollamada para hablar del proyecto, asesorar y realizar una muestra rápida.</p>
-                            </div>
-                        </div>
-                        <div class="servicios__dw">
-                            <div class="servicios__icon-container">
-                                <img class="servicios__icon" src="assets/images/programacionWebIcon.png" alt="Icono del servicio de desarrollo web">
-                            </div>
-                            <div class="serviciosContent">
-                                <h4>Desarrollo Web</h4>
-                                <p>Estructura completa del proyecto, estilado del sitio, animaciones e interactividad.</p>
+            <section class="proyectos__container d-flex flex-column justify-content-center">
+                <div>
+                    <h2 class="my-5">Proyectos</h2>
+                    <div class="proyectos__grid">
+                        <div class="proyectos proyecto__uno">
+                            <h3>Proyecto 1</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <h1>Portfolio de Amilcar Dev</h1>
-                <div class="proyectos__grid">
-                    <div class="proyectos proyecto__uno">
-                        <h3>Proyecto 1</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyecto__dos">
+                            <h3>Proyecto 2</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Inicia otro proyecto -->
-                    <div class="proyectos proyecto__dos">
-                        <h3>Proyecto 2</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyecto__tres">
+                            <h3>Proyecto 3</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Inicia otro proyecto -->
-                    <div class="proyectos proyecto__tres">
-                        <h3>Proyecto 3</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyecto__cuatro">
+                            <h3>Proyecto 4</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Inicia otro proyecto -->
-                    <div class="proyectos proyecto__cuatro">
-                        <h3>Proyecto 4</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyecto__cinco">
+                            <h3>Proyecto 5</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Inicia otro proyecto -->
-                    <div class="proyectos proyecto__cinco">
-                        <h3>Proyecto 5</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyecto__seis">
+                            <h3>Proyecto 6</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
                         </div>
+                        <!-- Inicia otro proyecto -->
                     </div>
-                    <!-- Inicia otro proyecto -->
-                    <div class="proyectos proyecto__seis">
-                        <h3>Proyecto 6</h3>
-                        <p> Descripcion del proyecto</p>
-                        <div class="proyectos__iconos">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                        </div>
-                    </div>
-                    <!-- Inicia otro proyecto -->
                 </div>
             </section>
             <!-- Fin de la sección de proyectos -->
             <!-- Inicia la sección de Sobre mi-->
-            <section>
-                <div>
-                    <div class="profile__img-container">
-                        <img src="assets/images/dragonLogo.png">
-                    </div>
+            <section class="my-5 sobre-mi__wrapper">
+                <div class="d-flex flex-column align-items-center">
                     <div class="profile__data-container">
                         <div>
                             <div>
-                                <h1>¿Quies es Amilcar Alsina?</h1>
-                                <p>Soy un apasionado de la tecnología que está en proceso de profesionalización en el desarrollo front-end. Actualmente, me encuentro cursando un programa especializado en Front End en CoderHouse, donde continúo expandiendo mis habilidades técnicas. Además, estoy complementando mi formación aprendiendo sobre UI y Back-end, no solo para mejorar la calidad de mi trabajo, sino también por mi interés y fascinación por la tecnología.
-                                <br>
-                                <br>
-                                Aspiro a obtener un título en Ciencias de Datos, lo que me permitirá integrar aún más mi enfoque analítico con mi experiencia en desarrollo web. Además, después de haber trabajado 9 años en la Fuerza de Seguridad (GNA), he desarrollado habilidades blandas clave como la comunicación efectiva y el trabajo en equipo</p>
+                                <h2>¿Quién es Amilcar Alsina?</h2>
+                                <p>
+                                    Soy un apasionado de la tecnología, en proceso de profesionalización en el desarrollo front-end. Actualmente, me encuentro cursando un programa especializado en Front End en CoderHouse, donde continúo expandiendo mis habilidades técnicas. Además, estoy complementando mi formación aprendiendo sobre Diseño, UX y UI, para mejorar la calidad de mi trabajo. En el futuro, también me gustaría aprender sobre Back-end para comprender mejor esta área de trabajo y fortalecer mi colaboración con compañeros.
+                                    <br>
+                                    Mi objetivo a largo plazo es cursar una tecnicatura en Ciencia de Datos e IA, ya que me interesa explorar aún más el impacto que tendrá esta técnologia a futuro.
+                                    <br>
+                                    <br>
+                                    He desarrollado habilidades blandas como el trabajo en equipo, la comunicación efectiva y la resolución de problemas bajo presión, tras 9 años de servicio en una Fuerza de Seguridad. Además, tengo un interés particular en el desarrollo de videojuegos, me gusta "Gamificar" actividades para lograr objetivos con mayor motivación y también, me informo sobre ciberseguridad, para estar al tanto respecto a vulnerabilidades básicas que podrían afectar en mis futuros proyectos.
+                                </p>
                             </div>
-                            <h2>Habilidades y experiencias</h2>
+                            <h2>Habilidades</h2>
                             <div class="profile__skills-container">
                                 <ul>
-                                    <li class="profile__skills">
-                                        <div class="load__bar">
-                                            <div class="load bar10">
-                                                1
-                                            </div>
-                                        </div>
-                                        <span class="profileSkillName">Webs de práctica</span>
-                                    </li>
-        
-                                    <li class="profile__skills">
-                                        <div class="load__bar">
-                                            <div class="load bar0">
-                                                0
-                                            </div>
-                                        </div>
-                                        <span class="profileSkillName">Webs para clientes</span>
-                                    </li>
-        
                                     <li class="profile__skills">
                                         <div class="load__bar">
                                             <div class="load bar30">
@@ -224,11 +213,10 @@
                                     <li class="profile__skills">
                                         <div class="load__bar">
                                             <div class="load bar40">
-                                                <i class="fab fa-bootstrap"></i>
-                                                <i class="fab fa-sass"></i>
-                                                <i class="fab fa-git-alt"></i>
-                                                <i class="fab fa-wordpress"></i>
-        
+                                                <i class="fab fa-bootstrap load__herr"></i>
+                                                <i class="fab fa-sass load__herr"></i>
+                                                <i class="fab fa-git-alt load__herr"></i>
+                                                <i class="fab fa-wordpress load__herr"></i>
                                             </div>
                                         </div>
                                         <span class="profileSkillName">Herramientas</span>
@@ -242,77 +230,63 @@
                                         </div>
                                         <span class="profileSkillName">Diseño, UX y UI</span>
                                     </li>
-        
-                                    <li class="profile__skills">
-                                        <div class="load__bar">
-                                            <div class="load bar0">
-                                                0
-                                            </div>
-                                        </div>
-                                        <span class="profileSkillName">Experiencia laboral (Años)</span>
-                                    </li>
-        
-                                    <li class="profile__skills">
-                                        <div class="load__bar">
-                                            <div class="load bar60">
-                                                Intermedio
-                                            </div>
-                                        </div>
-                                        <span class="profileSkillName">Comunicacion y trabajo en equipo</span>
-                                    </li>
-        
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </section>
-                <div class="certificados__container d-flex-column align-items-center">
-                    <h3>Certificaciones</h3>
-                    <div class="certificados__web">
-                        <button class="btn btn--web" type="button" data-bs-toggle="collapse" data-bs-target="#certDesarrollo" aria-expanded="false" aria-controls="certDesarrollo">
-                            Desarrollo Web (Front-end)
-                        </button>
-                        <div class="collapse" id="certDesarrollo">
-                            <ul>
-                                <li><a href="#">Desarrollo Web (CoderHouse)</a></li>
-                                <li><a href="#">JavaScript (Coder House)</a></li>
-                                <li><a href="#">React (CoderHouse)</a></li>
-                                <!-- Añade más certificados aquí -->
-                            </ul>
+                <div class="certificados__container d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="my-5">Certificaciones</h3>
+                    <div class="d-flex flex-column flex-md-row justify-content-center">
+                        <div class="certificados__web col-md-6 my-2">
+                            <button class="btn btn--web btn--cert" type="button" data-bs-toggle="collapse" data-bs-target="#certDesarrollo" aria-expanded="false" aria-controls="certDesarrollo">
+                                Desarrollo Web (Front-end)
+                            </button>
+                            <div class="collapse" id="certDesarrollo">
+                                <ul>
+                                    <li><a href="#"><p>Desarrollo Web (CoderHouse)</p></a></li>
+                                    <li><a href="#"><p>JavaScript (Coder House)</p></a></li>
+                                    <li><a href="#"><p>React (CoderHouse)</p></a></li>
+                                    <!-- Añade más certificados aquí -->
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="certificados__design">
-                        <button class="btn btn--design" type="button" data-bs-toggle="collapse" data-bs-target="#certDiseño" aria-expanded="false" aria-controls="certDiseño">
-                                Diseño, UX y UI
-                        </button>
-                        <div class="collapse" id="certDiseño">
-                            <ul>
-                                <li><a href="#">Proximamente...</a></li>
-                                <!-- Añade más certificados aquí -->
-                            </ul>
+                        <div class="certificados__design col-md-6 my-2">
+                            <button class="btn btn--design btm--cert" type="button" data-bs-toggle="collapse" data-bs-target="#certDiseño" aria-expanded="false" aria-controls="certDiseño">
+                                    Diseño, UX y UI
+                            </button>
+                            <div class="collapse" id="certDiseño">
+                                <ul>
+                                    <li><a href="#"><p>Proximamente...</p></a></li>
+                                    <!-- Añade más certificados aquí -->
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="form">
+            <section class="form m-auto">
+                <p class="fs-1 pt-3">Formulario de Contacto<p>
                 <form id="miFormulario" class="container" novalidate>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required aria-label="Nombre completo">
-                        <div class="invalid-feedback">
-                            Por favor, ingresa tu nombre completo.
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div class="mb-3 col-lg-5">
+                            <label for="nombre" class="form-label">Nombre o Empresa</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre o empresa" required aria-label="Nombre completo">
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu nombre o el de la empresa.
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
-                        <div class="invalid-feedback">
-                            Por favor, introduce un correo electrónico válido.
+                        <div class="mb-3 col-lg-5 offset-lg-2">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un correo electrónico válido.
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje" required aria-label="Mensaje"></textarea>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escriba su mensaje" required aria-label="Mensaje"></textarea>
                         <div class="invalid-feedback">
                             El mensaje no puede estar vacío.
                         </div>
@@ -332,21 +306,36 @@
         </div>
     </main>
 
-    <footer class="footer row text-center align-items-center p-1">
-        <!-- Enlaces relevantes a redes y CV en formato .pdf descargable -->
-            <div class="col-5">
-                <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="m-1">
-                    <img src="assets/images/gitHubIcon.png" alt="Icono de Git Hub" class="footer__icon">
-                </a>
-                <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer" class="m-1">
-                    <img src="assets/images/linkedinIcon.png" alt="Icono de Linkedin" class="footer__icon">
-                </a>
+    <footer class="footer container-fluid d-flex flex-column p-3 m-0">
+        <div class="d-flex flex-column flex-xxl-row">
+            <div class="d-flex flex-column text-center">
+                <h4 class="m-0">Amilcar Noel Alsina</h4>
+                <p>Programador Front End</p>
             </div>
-            <div class="col-7">
-                <button class="btn btn--cv">
-                    <a href="assets/cv.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
-                </button>
+            <div class="container-fluid d-flex flex-column flex-md-row">
+                <div class="d-flex flex-column footer__principal m-0 m-lg-auto">
+                    <p class="m-0"><strong>Contactame</strong></p>
+                    <p> No dudes en trabajar conmigo para tu proximo proyecto. </p>
+                </div>
+                <div class="container-fluid d-flex flex-column m-0 p-0 footer__redes-container">
+                    <p class="text-start text-md-center"><strong>Sigueme</strong></p>
+                    <div class="d-flex flex-row justify-content-md-center">
+                        <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github footer__icon px-3"></i>
+                        </a>
+                        <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin footer__icon px-3"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+            <button class="btn btn--cv m-auto">
+                <a href="assets/cv.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
+            </button>
+        </div>
+        <div class="m-2 text-center">
+            <i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.
+        </div>
     </footer>
     <!-- Fin del Footer -->
     <!-- Bootstrap JS -->

@@ -1,16 +1,53 @@
 /*------ Configuraciones globales ---- */
-* {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
+:root {
     --colorH: #26a;
     --colorP: #101632dd;
     --colorBG: #e2eaff;
     --colorBgSec: #48e;
+    --colorButton:#20b2ee;;
+    --buttonHover: #20B2AA;
+    --hoverShadow: #008080;
 }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*-- Estilo general de los H --*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat',sans-serif;
+    letter-spacing: 1px;
+    color: var(--colorH);
+}
+/*-- Estilo general de los parrafos --*/
 p {
-    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
+/* Estilo para el scroll */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho del scroll */
+}
+::-webkit-scrollbar-track {
+    background: var(--colorBG); /* Fondo del track del scroll */
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--colorH); /* Color del scroll */
+    border-radius: 20px; /* Bordes redondeados */
+    border: 3px solid var(--colorBG); /* Para que combine mejor con el fondo */
+}
+/* Hover del scroll */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--butonHover); /* Cambia el color al interactuar */
+}
+/*--- Estilo básico de botón ---*/
+.btn {
+    background-color: var(--colorBgSec);
+    color: var(--colorBG);
+}
+/*--------- Fin de las configuraciones globales ---------*/
 
 
 
@@ -19,26 +56,69 @@ p {
   /*-----------------------------------------*/
  /* -------- Seccion del navbar ------------*/
 /*-----------------------------------------*/
-nav {
-    background-color: var(--colorBG);
-    color: var(--colorP);
-}
 .navbar {
     position: fixed;
-    padding: 5px;
+    padding: 5px 12px;
     top: 0;
     z-index: 1000;
+    color: var(--colorButton);
+    animation: adaptNav both;
+    animation-timeline: scroll();
+    animation-range: 10px 100px;
+}
+@keyframes adaptNav {
+    from {
+        background-color: var(--colorBG);
+        color: var(--colorButton);
+    }
+    to {
+        background-color: #26aa;
+        color: var(--colorBG);
+    }
+}
+.navbar__brand-container {
+    margin-left: clamp(1px, 2vw, 30px);
 }
 .navbar-brand {
-    color: var(--colorH);
+    padding-left: 100px;
 }
-.navbarIcon {
-    width: 50px;
+.navbar .navbar-brand {
+    color: inherit;
 }
-.nav-link {
-    color: var(--colorP);
-    text-decoration: none;
+.navbar-brand p {
+    font-size: clamp(14px, 2vw, 24px);
+    letter-spacing: 1px;
+    color: inherit;
+    text-shadow: 1px 1px 22px var(--colorBgSec);
 }
+.navbar-brand p:hover {
+    color: var(--buttonHover);
+    text-shadow: 1px 1px 22px var(--hoverShadow);
+}
+.navbar .navbar-toggler {
+    color: inherit;
+}
+.navbar-toggler i {
+    text-shadow: 1px 2px 22px var(--colorBgSec);
+}
+
+.navbar-toggler i:hover {
+    color: var(--buttonHover);
+    text-shadow: 1px 2px 22px var(--hoverShadow);
+}
+.navbar .navbar-nav .nav-item .nav-link {
+    color: inherit;
+}
+.nav-link p{
+    font-size: clamp(16px, 2vw, 18px);
+    color: inherit;
+    text-shadow: 1px 2px 22px var(--colorP);
+}
+.nav-link p:hover {
+    color: var(--buttonHover);
+    text-shadow: 1px 1px 22px var(--hoverShadow);
+}
+
 /*---------- Fin de la seccion del navbar ------*/
 
 
@@ -49,10 +129,7 @@ nav {
  /*--------- Seccion del Wrapper ----------- */
 /*-------------------------------------------*/
 .portfolio__wrapper{
-    margin-top: 50px;
-    padding-bottom: 30px;
     background-color: var(--colorBG);
-    color: var(--colorP);
 }
 
 
@@ -62,65 +139,133 @@ nav {
  /*------ Hero Section -------- */
 /*-----------------------------*/
 .hero__container {
-    padding-top: 15px;
-    min-height: 100dvh;
+    height: 100dvh;
+    margin-top: 10px;
 }
-.hero__profile{
+.hero__primary {
+    animation: aparecer 3s linear 2s both;
 }
-.hero__profile h1 {
-    color: var(--colorH);
+.hero__info h1 {
     font-size: 40px;
+}
+/*---- boton de contacto ----*/
+.btn__contact {
+    font-size: clamp(18px, 2vw, 24px);
+    width: 400px;
+    max-width: 60%;
+    background-color: var(--colorButton);
+    color: var(--colorBG);
+    box-shadow: 1px 1px 22px var(--colorH), 2px 4px 10px var(--colorH);
+}
+.btn__contact:hover {
+    background-color: var(--buttonHover);
+    color: var(--colorBG);
+    box-shadow: 1px 1px 22px var(--hoverShadow), 2px 4px 10px var(--hoverShadow);
+}
+/*--- Imagen de perfil --*/
+.hero__secundary {
+    height: 100%;
+}
+.hero__secundary h1 {
+    width: clamp(22px, 2vw, 40px);
+}
+.hero__img-profile-container{
+    position: relative;
+    width: 100%;
+}
+.img-profile__fondo {
+    width: 0%;
+    height: 0%;
+    background-color: var(--colorBgSec);
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    animation: expandBackground 1s ease-out 1.7s forwards;
+}
+/* Animación para expandir el fondo */
+@keyframes expandBackground {
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 90%;
+        height: 80%;
+        opacity: 1;
+    }
+}
+@keyframes expandBaseBG {
+    0% {
+        width: 0%;
+        opacity: 0.1;
+        color: transparent;
+    }
+    90% {
+        width: 90%;
+        opacity: 1;
+        color: transparent;
+    }
+    100% {
+        color: var(--colorBG);
+    }
+}
+.img__profile {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    animation: aparecer 1s linear .8s forwards;
+}
+/*---- Media Queries del Hero section ----*/
+@media (min-width: 768px) {
+    .hero__img-profile-container {
+        height: 750px;
+        max-height: 100%;
+    }
+    .img-profile__fondo {
+        height: 70%;
+        border-radius: 45% 45% 0 0;
+    }
+    .hero__disponibilidad {
+        width: 90%;
+        margin: auto;
+    }
+    .hero__primary {
+        margin: auto;
+    }
+}
+@media (min-width: 1024px) {
+    .img__profile {
+        height: 100%;
+    }
 }
 /* ------------ Disponibilidad --------- */
 .hero__disponibilidad {
-    background-color: var(--colorBG);
-    color: var(--colorP);
-    padding: 5px 0;
-}
-.hero__Icon-fl {
-    width: 20px;
-}
-.hero__Icon-c {
-    width: 20px;
-} 
-/*---- botones ----*/
-.btn {
     background-color: var(--colorBgSec);
     color: var(--colorBG);
+    border-radius: 0 0 12px 12px;
+    animation: expandBaseBG 0.5s ease-in forwards;
 }
-.btn--contact {
-    width: 70%;
-    font-size: 18px;
+.hero__freelancer , .hero__contrato {
+    margin: auto;
 }
-.btn--contact:hover {
-    width: 50%;
-    background-color: #36e;
-    color: var(--colorP);
+.hero__Icon-fl {
+    color: var(--colorBG);
 }
-/* ---------- Servicios -------- */
-.servicios__wd , .servicios__dw {
-    background-color: var(--colorH);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5px;
-    margin: 0 0 15px 0;
-    font-size: 10px;
-    border-radius: 4px;
+.hero__Icon-c {
+    color: var(--colorBG);
 }
-.servicios__icon-container {
-    display: flex;
-    width: 10%;
-    justify-content: center;
-    align-items: flex-start;
-}
-.servicios__icon {
-    width: 30px;
-    padding-top: 20px;
-    color: #eee;
-}
-.servicios__content {
-    width: 90%;
-    padding: 0 30px 0 0;
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 /*-----------  Fin de la Hero Section ------------------*/ 
 
@@ -131,8 +276,13 @@ nav {
   /*-----------------------------------------------------------*/
  /* ----------------  Estilo de Proyectos --------  ----------*/
 /*-----------------------------------------------------------*/
+/*--- Grid de proyectos ---*/
 .proyectos__container {
     min-height: 100dvh;
+    margin: auto;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
 }
 .proyectos__grid {
     display: grid;
@@ -167,29 +317,42 @@ nav {
     font-size: 24px;
 } 
 /* Media query de proyectos */
-/* @media (min-width: 600px) {
-    .proyectosGrid {
+@media (min-width: 768px) {
+    .proyectos__grid {
         grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+        gap: 40px;
     }
-    .proyectoUno {
+    .proyecto__uno {
         grid-column: span 2;
     }
-    .proyectoSeis {
+    .proyecto__seis {
         grid-column: span 2;
     }
 }
-@media (min-width: 1000px) {
-    .proyectosGrid {
-        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+@media (min-width: 1024px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
     }
-    .proyectoUno {
+    .proyecto__uno {
         grid-column: span 2;
         grid-row: span 2;
     }
-    .proyectoSeis {
+    .proyecto__seis {
         grid-column: span 4;
     }
-} */
+}
+@media (min-width: 1200px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    }
+    .proyecto__uno {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .proyecto__seis {
+        grid-column: span 4;
+    }
+}
 
 
 
@@ -198,22 +361,41 @@ nav {
   /*-----------------------------------------------------*/
  /*----------- Estilos de Sobre mi ---------------------*/
 /*-----------------------------------------------------*/
+.sobre-mi__wrapper{
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
+    width: 100%;
+    background: linear-gradient(to bottom, 
+    var(--colorBG) 0%,       
+    #20b2aa99 30%,   
+    var(--colorBG) 100%);
+}
 .profile__img-container {
-    max-height: 400px;
+    height: auto;
+    max-height: 100%;
     overflow: hidden;
 }
-.profile__img-container img {
-    width: 100%;
-    max-width: 600px;
+.profile__img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
 .profile__data-container {
+    /* background-color: #20b2aa44;
+    border-radius: 12px; */
     width: 600px;
     max-width: 100%;
-    padding: 12px;
-    margin: auto;
+    padding: 30px;
+}
+.profile__data-container h2 {
+    margin: 0 0 20px 0;
+    font-size: clamp(28px, 2vw, 40px);
+
 }
 .profile__skills-container {
     margin: auto;
+    letter-spacing: 0.5px;
 }
 .profile__skills-container ul {
     padding: 0;
@@ -228,7 +410,7 @@ nav {
     margin: 5px;
 }
 .load__bar {
-    border: 1px solid #eee;
+    border: 1px solid var(--colorBgSec);
     border-radius: 8px;
     padding: 2px;
     width: 100%;
@@ -237,16 +419,13 @@ nav {
     margin: 5px;
 }
 .load {
-    background-color: #eee;
-    color: #48e;
+    background-color: var(--colorBgSec);
+    color: var(--colorBG);
     border-radius: 4px;
     padding: 4px 6px;
 }
-.bar10 {
-    width: 15%;
-}
-.bar0 {
-    width: 8%;
+.load__herr {
+    margin: 0 clamp(0px, 0.2vw, 5px);
 }
 .bar30 {
     width: 30%;
@@ -254,12 +433,32 @@ nav {
 .bar40 {
     width: 40%;
 }
-.bar60 {
-    width: 60%;
+@media (max-width: 768px) {
+    .profile__img-container {
+        height: auto;
+        flex: 1;
+        max-height: 100%; 
+    }
+    .profile__img {
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        width: auto;
+    }
+
+    .profile__data-container {
+        flex: 1;
+        padding: 20px;
+    }
 }
 /* ----- Certificaciones ------ */
 .certificados__container {
+    min-height: 40dvh;
     margin: 20px auto;
+    letter-spacing: 0,5px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 30%;
 }
 .collapse ul{
     padding: 0;
@@ -269,62 +468,102 @@ nav {
 }
 .collapse ul li a {
     text-decoration: none;
-    color: #eee;
+    color: var(--colorP);
+    letter-spacing: 1px;
+    color: var(--colorButton);
+    text-shadow: 1px 1px 22px var(--colorBgSec);
+}
+.collapse ul li a:hover {
+    color: var(--buttonHover);
+    text-shadow: 1px 1px 22px var(--hoverShadow);
+}
+.collapse ul li a p{
+    margin-top: 5px;
 }
 .certificados__web, .certificados__design {
     margin: 20px;
 }
 
 .btn--web , .btn--design {
-    width: 250px;
+    width: 220px;
 }
 
 .btn--web:hover , .btn--design:hover {
     background-color: var(--colorH);
     color: var(--colorP);
 }
+/*--------------  Queries de Sobre mi -------------------*/
 /*------ Formulario -----*/
 .form {
     padding-bottom: 12px;
     background-color: var(--colorH);
-    color: var(--colorP);
+    color: var(--colorBG);
+    border-radius: 12px;
     width: 80%;
+    max-width: 800px;
     margin: auto;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
 }
+#nombre, #email, #mensaje {
+    background-color: var(--colorBG); 
+    color: var(--colorP); 
+}
+
 .invalid-feedback {
     color: var(--colorP);
 }
 .honeypot {
     display: none; /* Oculta el campo honeypot para los usuarios */
 }
-.btn--submit:hover {
-    background-color: var(--colorH);
+.btn--submit{
+    background-color: var(--colorBG);
     color: var(--colorP);
-    border: 1px solid var(--colorP);
+}
+.btn--submit:hover {
+    background-color: var(--colorBgSec);
+    color: var(--colorP);
+    border: 1px solid var(--colorBG);
     border-radius: 8px;
 }
-
+/* Cambiar el color de fondo de los campos de entrada form */
+#nombre:focus, #email:focus, #mensaje:focus {
+    border: 2px solid yellow;
+}
 /*------ Fin de la sección sobre mi ------*/
 
 
 
 
 
+/*------ Espaciador --------*/
+.espaciador {
+    height: 80px;
+}
   /*---------------------------------------*/
  /* -------Sección del footer ------------*/
 /*---------------------------------------*/
 .footer {
-    background-color: var(--colorP);
+    background-color: var(--colorBgSec);
     color: var(--colorBG);
-    padding: 20px 5px;
-    height: 50px;
+    width: 100%;
+}
+.footer h4 {
+    color: var(--colorBG);
+}
+.footer__redes-container {
+    width: 400px;
 }
 .footer__icon {
-    width: 30px;
+    font-size: 40px;
+    color: var(--colorBG);
 }
 .btn--cv {
     background-color: var(--colorBG);
     border-radius: 15px;
+    width: 200px;
+    max-height: 50px;
 }
 .btn--cv a {
     text-decoration: none;
@@ -332,271 +571,14 @@ nav {
 }
 
 .btn--cv:hover {
-    background-color: var(--colorP);
+    background-color: var(--colorH);
     border: 1px solid var(--colorBG);
 }
 .btn--cv a:hover {
     color: var(--colorBG);
 }
-
-/*------ Espaciador --------*/
-.espaciador {
-    height: 30px;
-}
-
-
-/* ---------- Queries de Home  --------------------*/
-/* ---- Seccion del navbar ---------*/
-/* @media (min-width: 1024px) {
-    .navLink {
-        padding: 10px;
-    }
-} */
-/* ---- Medias del Carrousel --- */
-/* @media (min-width: 1024px) {
-    #carouselLarge1, #carouselLarge2, #carouselLarge3 {
-        display: block;
-    }
-    #carouselSmall {
-    display: none;
-    }
-} */
-/* ---------------- Seccion de disponibilidad ------------*/
-/* @media (min-width: 768px) {
-    .disponibilidadSeccion {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-} */
-/* ------------------ Seccion de servicios ------------------*/
-/* @media (min-width: 768px) {
-    .servicios {
-        display: flex;
-        flex-direction: row;
-    }
-} */
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------------------------------*/
-/* ----------------  Estilo de Proyectos ------------------*/
-
-/* Estilo para dispositivos móviles (1 columna) */
-/* .portfolioWrapper {
-    max-width: 100dvw;
-    min-height: 100dvh;
-}
-.proyectosContainer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 0 0 30px 0;
-}
-.proyectosGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 95%;
-    margin: auto;
-    max-width: 1300px;
-    gap: 12px;
-}
-.proyecto {
-    display: grid;
-    place-content: center;
-    color: #eee;
-    text-shadow: 2px 2px 2px #333;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px #333;
-    text-align: center;
-    margin: auto;
-    padding: 5px;
-    width: 100%;
-    min-height: 100%;
-    background-image: linear-gradient(#3339, #3339), url(../images/carousel/mafiaCat.jpg);
-    background-position: center;
-    background-size: cover;
-}
-.proyecto:hover {
-    opacity: 0.60;
-    box-shadow: 0px 2px 10px #eeee;
-}
-.proyectoIconos i {
-    margin-right: 5px;
-    font-size: 24px;
-} */
-/* Media query de proyectos */
-/* @media (min-width: 600px) {
-    .proyectosGrid {
-        grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
-    }
-    .proyectoUno {
-        grid-column: span 2;
-    }
-    .proyectoSeis {
-        grid-column: span 2;
+@media (max-width: 768px) {
+    .footer__redes-container {
+        max-width: 50%;
     }
 }
-@media (min-width: 1000px) {
-    .proyectosGrid {
-        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-    }
-    .proyectoUno {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    .proyectoSeis {
-        grid-column: span 4;
-    }
-} */
-
-
-
-
-
-
-
-/*-----------------------------------------------------*/
-/*----------- Estilos de Sobre mi --------------------*/
-/* .sobreMiWrapper {
-    text-align: center;
-}
-.profile {
-    width: 1200px;
-    max-width: 100%;
-    margin: auto;
-}
-.profileWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-}
-.profileImgContainer {
-    max-height: 400px;
-    overflow: hidden;
-}
-.profileImgContainer img {
-    width: 100%;
-    max-width: 600px;
-}
-.profileDataContainer {
-    width: 600px;
-    max-width: 100%;
-    padding: 12px;
-}
-.profileDescription p {
-    text-align: center;
-}
-.profileSkillsContainer {
-    margin: auto;
-}
-.profileSkillsContainer ul {
-    padding: 0;
-    margin: 0;
-}
-.profileSkill {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    list-style: none;
-    width: 95%;
-    margin: 5px;
-}
-.loadBar {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 2px;
-    width: 100%;
-    margin: 4px;
-    text-align: center;
-    margin: 5px;
-}
-.load {
-    background-color: #eee;
-    color: #48e;
-    border-radius: 4px;
-    padding: 4px 6px;
-}
-.bar10 {
-    width: 15%;
-}
-.bar0 {
-    width: 8%;
-}
-.bar30 {
-    width: 30%;
-}
-.bar40 {
-    width: 40%;
-}
-.bar60 {
-    width: 60%;
-} */
-/* ----- Seccion de certificaciones ------ */
-/* .certificadosSection {
-    margin: 20px;
-}
-.collapse {
-    margin-top: 10px;
-    align-items: center;
-}
-.collapse ul{
-    padding: 0;
-}
-.collapse ul li {
-    list-style: none;
-}
-.collapse ul li a {
-    text-decoration: none;
-    color: #eee;
-}
-.certificadosWeb, .certificadosDiseño {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-} */
-/*--------------  Queries de Sobre mi -------------------*/
-/* @media (min-width:600px) {
-    .profileWrapper {
-        flex-direction: row;
-        max-height: 1100px;
-        height: 100%;
-        width: 95%;
-        margin: auto;
-        background-color: #26b;
-        border: 1px solid #eee;
-        border-radius: 8px;
-    }
-    .profileImgContainer {
-        height: 100%;
-        max-height: 100%;
-
-    }
-    .profileImgContainer img {
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px 0 0 8px;
-    }
-    .profileDataContainer {
-        width: 80%;
-    }
-    .footer {
-        margin-top: 50px;
-    }
-}
-@media (min-width:800px) {
-
-    .footer {
-        margin-top: 200px;
-    }
-} */
