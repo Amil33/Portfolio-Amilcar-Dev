@@ -40,7 +40,7 @@ p {
 }
 /* Hover del scroll */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--butonHover); /* Cambia el color al interactuar */
+    background-color: var(--buttonHover); /* Cambia el color al interactuar */
 }
 /*--- Estilo básico de botón ---*/
 .btn {
@@ -62,19 +62,10 @@ p {
     top: 0;
     z-index: 1000;
     color: var(--colorButton);
-    animation: adaptNav both;
+    animation: 3s adaptNav both;
     animation-timeline: scroll();
-    animation-range: 10px 100px;
-}
-@keyframes adaptNav {
-    from {
-        background-color: var(--colorBG);
-        color: var(--colorButton);
-    }
-    to {
-        background-color: #26aa;
-        color: var(--colorBG);
-    }
+    animation-range: 10px 150px;
+    max-width: 100dvw   ;
 }
 .navbar__brand-container {
     margin-left: clamp(1px, 2vw, 30px);
@@ -90,6 +81,7 @@ p {
     letter-spacing: 1px;
     color: inherit;
     text-shadow: 1px 1px 22px var(--colorBgSec);
+    transition: color 1s ease, text-shadow 1s ease;
 }
 .navbar-brand p:hover {
     color: var(--buttonHover);
@@ -113,6 +105,7 @@ p {
     font-size: clamp(16px, 2vw, 18px);
     color: inherit;
     text-shadow: 1px 2px 22px var(--colorP);
+    transition: color .5s ease, text-shadow .5s ease;
 }
 .nav-link p:hover {
     color: var(--buttonHover);
@@ -156,6 +149,7 @@ p {
     background-color: var(--colorButton);
     color: var(--colorBG);
     box-shadow: 1px 1px 22px var(--colorH), 2px 4px 10px var(--colorH);
+    transition: background-color 1s ease, box-shadow 1s ease;
 }
 .btn__contact:hover {
     background-color: var(--buttonHover);
@@ -186,62 +180,11 @@ p {
     z-index: 0;
     animation: expandBackground 1s ease-out 1.7s forwards;
 }
-/* Animación para expandir el fondo */
-@keyframes expandBackground {
-    0% {
-        width: 0%;
-        height: 0%;
-        opacity: 0;
-    }
-    100% {
-        width: 90%;
-        height: 80%;
-        opacity: 1;
-    }
-}
-@keyframes expandBaseBG {
-    0% {
-        width: 0%;
-        opacity: 0.1;
-        color: transparent;
-    }
-    90% {
-        width: 90%;
-        opacity: 1;
-        color: transparent;
-    }
-    100% {
-        color: var(--colorBG);
-    }
-}
 .img__profile {
     position: relative;
     z-index: 10;
     opacity: 0;
     animation: aparecer 1s linear .8s forwards;
-}
-/*---- Media Queries del Hero section ----*/
-@media (min-width: 768px) {
-    .hero__img-profile-container {
-        height: 750px;
-        max-height: 100%;
-    }
-    .img-profile__fondo {
-        height: 70%;
-        border-radius: 45% 45% 0 0;
-    }
-    .hero__disponibilidad {
-        width: 90%;
-        margin: auto;
-    }
-    .hero__primary {
-        margin: auto;
-    }
-}
-@media (min-width: 1024px) {
-    .img__profile {
-        height: 100%;
-    }
 }
 /* ------------ Disponibilidad --------- */
 .hero__disponibilidad {
@@ -258,14 +201,6 @@ p {
 }
 .hero__Icon-c {
     color: var(--colorBG);
-}
-@keyframes aparecer {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 /*-----------  Fin de la Hero Section ------------------*/ 
 
@@ -295,63 +230,61 @@ p {
 .proyectos {
     display: grid;
     place-content: center;
-    color: #eee;
+    color: var(--colorBG);
+    background: linear-gradient(to bottom, 
+    var(--colorBgSec) 0%,
+    var(--colorButton) 60%,         
+    var(--buttonHover) 100%);
     text-shadow: 2px 2px 2px #333;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px #333;
-    text-align: center;
+    box-shadow: 0px 2px 10px var(--hoverShadow);
+    transition: background 5s ease, box-shadow 0.5s ease;
+    position: relative;
     margin: auto;
     padding: 5px;
     width: 100%;
     min-height: 100%;
-    background-image: linear-gradient(#3339, #3339), url(../images/dragonLogo.png);
-    background-position: center;
-    background-size: cover;
+    text-decoration: none;
+    border-radius: 8px;
+    z-index: 2;
 }
-.proyectos:hover {
-    opacity: 0.60;
-    box-shadow: 0px 2px 10px #eeee;
+.proyectos p{
+    letter-spacing: 1.5px;
 }
 .proyectos__iconos i {
     margin-right: 5px;
     font-size: 24px;
-} 
-/* Media query de proyectos */
-@media (min-width: 768px) {
-    .proyectos__grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
-        gap: 40px;
-    }
-    .proyecto__uno {
-        grid-column: span 2;
-    }
-    .proyecto__seis {
-        grid-column: span 2;
-    }
 }
-@media (min-width: 1024px) {
-    .proyectos__grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-    }
-    .proyecto__uno {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    .proyecto__seis {
-        grid-column: span 4;
-    }
+.proyectos--desarrollando {
+    background-color: var(--colorButton);
+    opacity: 1;
 }
-@media (min-width: 1200px) {
-    .proyectos__grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-    }
-    .proyecto__uno {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    .proyecto__seis {
-        grid-column: span 4;
-    }
+.gear {
+    font-size: 100px;
+    animation: gearSpin 10s linear infinite;
+}
+.proyecto--seis p, div {
+    z-index: 3;
+}
+.proyectos--seis:hover {
+    box-shadow: 1px 1px 12px var(--hoverShadow);
+}
+.proyectos--seis::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+    var(--hoverShadow) 0%,
+    var(--buttonHover) 70%);
+    opacity: 0;
+    transition: opacity 1s ease;
+    border-radius: 8px;
+    z-index: 1;
+}
+.proyectos--seis:hover::before {
+    opacity: 1;
 }
 
 
@@ -368,7 +301,7 @@ p {
     width: 100%;
     background: linear-gradient(to bottom, 
     var(--colorBG) 0%,       
-    #20b2aa99 30%,   
+    #20b2aa66 30%,   
     var(--colorBG) 100%);
 }
 .profile__img-container {
@@ -394,8 +327,10 @@ p {
 
 }
 .profile__skills-container {
-    margin: auto;
     letter-spacing: 0.5px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
 }
 .profile__skills-container ul {
     padding: 0;
@@ -417,12 +352,21 @@ p {
     margin: 4px;
     text-align: center;
     margin: 5px;
+    transition: border 1s ease, box-shadow 1s ease;
 }
 .load {
     background-color: var(--colorBgSec);
     color: var(--colorBG);
     border-radius: 4px;
     padding: 4px 6px;
+    transition: background-color 1s ease;
+}
+.load__barDW.hovered {
+    border: 1px solid var(--buttonHover);
+    box-shadow: 2px 2px 6px var(--hoverShadow);
+}
+.loadDW.hovered {
+    background-color: var(--buttonHover);
 }
 .load__herr {
     margin: 0 clamp(0px, 0.2vw, 5px);
@@ -433,28 +377,9 @@ p {
 .bar40 {
     width: 40%;
 }
-@media (max-width: 768px) {
-    .profile__img-container {
-        height: auto;
-        flex: 1;
-        max-height: 100%; 
-    }
-    .profile__img {
-        height: 100%;
-        max-height: 100%;
-        object-fit: cover;
-        width: auto;
-    }
-
-    .profile__data-container {
-        flex: 1;
-        padding: 20px;
-    }
-}
 /* ----- Certificaciones ------ */
 .certificados__container {
     min-height: 40dvh;
-    margin: 20px auto;
     letter-spacing: 0,5px;
     animation: aparecer both;
     animation-timeline: view();
@@ -465,6 +390,7 @@ p {
 }
 .collapse ul li {
     list-style: none;
+    margin-top: 20px;
 }
 .collapse ul li a {
     text-decoration: none;
@@ -485,18 +411,28 @@ p {
 }
 
 .btn--web , .btn--design {
-    width: 220px;
+    width: 250px;
+    background-color: var(--colorButton);
+    box-shadow: 2px 2px 8px var(--colorH);
+    text-shadow: 2px 2px 8px var(--colorP);
+    transition: background-color 1s ease, box-shadow 1s ease;
 }
 
 .btn--web:hover , .btn--design:hover {
-    background-color: var(--colorH);
-    color: var(--colorP);
+    background-color: var(--buttonHover);
+    box-shadow: 2px 2px 8px var(--hoverShadow);
+    color: var(--colorBG);
 }
+
+
+
+
+
 /*--------------  Queries de Sobre mi -------------------*/
 /*------ Formulario -----*/
 .form {
     padding-bottom: 12px;
-    background-color: var(--colorH);
+    background-color: var(--colorBgSec);
     color: var(--colorBG);
     border-radius: 12px;
     width: 80%;
@@ -518,18 +454,18 @@ p {
     display: none; /* Oculta el campo honeypot para los usuarios */
 }
 .btn--submit{
-    background-color: var(--colorBG);
-    color: var(--colorP);
+    background-color: var(--colorButton);
+    color: var(--colorBG);
+    box-shadow: 1px 1px 12px var(--colorH);
+    transition: background-color 1s ease, box-shadow 1s ease;
 }
 .btn--submit:hover {
-    background-color: var(--colorBgSec);
-    color: var(--colorP);
-    border: 1px solid var(--colorBG);
-    border-radius: 8px;
+    background-color: var(--buttonHover);
+    box-shadow: 1px 1px 8px var(--colorBG);
 }
 /* Cambiar el color de fondo de los campos de entrada form */
 #nombre:focus, #email:focus, #mensaje:focus {
-    border: 2px solid yellow;
+    border: 2px solid var(--buttonHover);
 }
 /*------ Fin de la sección sobre mi ------*/
 
@@ -539,15 +475,22 @@ p {
 
 /*------ Espaciador --------*/
 .espaciador {
-    height: 80px;
+    height: 100px;
+    background: linear-gradient(to top, 
+    var(--colorButton) 0%,       
+    var(--colorBG) 100%);
 }
   /*---------------------------------------*/
  /* -------Sección del footer ------------*/
 /*---------------------------------------*/
 .footer {
-    background-color: var(--colorBgSec);
+    background: linear-gradient(to top, 
+    var(--colorH) 0%,
+    var(--colorBgSec) 30%,          
+    var(--colorButton) 100%);
     color: var(--colorBG);
     width: 100%;
+    padding-top: 50px;
 }
 .footer h4 {
     color: var(--colorBG);
@@ -559,26 +502,209 @@ p {
     font-size: 40px;
     color: var(--colorBG);
 }
+.footer__icon:hover {
+    color: var(--hoverShadow);
+    text-shadow: 2px 2px 8px var(--colorBG);
+}
 .btn--cv {
-    background-color: var(--colorBG);
+    background-color: var(--colorH);
+    box-shadow:  1px 1px 12px var(--colorBG);
     border-radius: 15px;
     width: 200px;
     max-height: 50px;
 }
 .btn--cv a {
     text-decoration: none;
-    color: var(--colorP);
+    color: var(--colorBG);
 }
 
 .btn--cv:hover {
-    background-color: var(--colorH);
-    border: 1px solid var(--colorBG);
+    background-color: var(--hoverShadow);
+    box-shadow: 2px 2px 8px var(--buttonHover);
 }
 .btn--cv a:hover {
     color: var(--colorBG);
 }
+/*--------------------------------------------------------------*/
+
+
+
+
+
+  /*------------------------------------------------------*/
+ /*---------- Sección de las media querys----------------*/
+/*------------------------------------------------------*/
+/*---- Media Queries del Hero section ----*/
+@media (min-width: 768px) {
+    .hero__img-profile-container {
+        height: 750px;
+        max-height: 100%;
+    }
+    .img-profile__fondo {
+        height: 70%;
+        border-radius: 45% 45% 0 0;
+    }
+    .hero__disponibilidad {
+        margin: auto;
+    }
+    .hero__primary {
+        margin: auto;
+    }
+}
+@media (min-width: 1024px) {
+    .img__profile {
+        height: 100%;
+    }
+}
+/* querys de disponibilidad */
+@media (min-width: 768px) {
+    @keyframes expandBaseBGSmall { /*--- Expandir el fondo de la base de la img del hero */
+        0% {
+            width: 0%;
+            opacity: 0.1;
+            color: transparent;
+        }
+        90% {
+            width: 90%;
+            opacity: 1;
+            color: transparent;
+        }
+        100% {
+            width: 90%;
+            opacity: 1;
+            color: var(--colorBG);
+        }
+    }
+    .hero__disponibilidad {
+        animation: expandBaseBGSmall 0.5s ease-in forwards;
+    }
+}
+/* Media query de proyectos */
+@media (min-width: 768px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+        gap: 40px;
+    }
+    .proyectos--uno {
+        grid-column: span 2;
+    }
+    .proyectos--seis {
+        grid-column: span 2;
+    }
+}
+@media (min-width: 1024px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    }
+    .proyecto--uno {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .proyecto--seis {
+        grid-column: span 4;
+    }
+}
+@media (min-width: 1200px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    }
+    .proyectos--uno {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .proyectos--seis {
+        grid-column: span 4;
+    }
+}
+/* Querys de sobre mi */
+@media (max-width: 768px) {
+    .profile__img-container {
+        height: auto;
+        flex: 1;
+        max-height: 100%; 
+    }
+    .profile__img {
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        width: auto;
+    }
+
+    .profile__data-container {
+        flex: 1;
+        padding: 20px;
+    }
+}
+/* Querys del footer */
 @media (max-width: 768px) {
     .footer__redes-container {
         max-width: 50%;
     }
 }
+/*--------------------------------------------------------------*/
+
+
+
+
+
+  /*------------------------------------------------------*/
+ /*---------- Sección de los keyframes-------------------*/
+/*------------------------------------------------------*/
+@keyframes adaptNav { /*---- Adaptacion del navbar ---*/
+    0% {
+        background-color: var(--colorBG);
+        color: var(--colorButton);
+    }
+    100% {
+        background-color: #26aa;
+        color: var(--colorBG);
+    }
+}
+/* keyframes de hero section */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes expandBackground { /*expandir el fondo */
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 90%;
+        height: 80%;
+        opacity: 1;
+    }
+}
+@keyframes expandBaseBG { /*--- Expandir el fondo de la base de la img del hero */
+    0% {
+        width: 0%;
+        opacity: 0.1;
+        color: transparent;
+    }
+    90% {
+        width: 90%;
+        opacity: 1;
+        color: transparent;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+        color: var(--colorBG);
+    }
+}
+/* Keyframes de proyectos */
+@keyframes gearSpin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*--------------------------------------------------------------*/

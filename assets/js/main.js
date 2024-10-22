@@ -35,6 +35,26 @@
 
 
 
+  //------------------------------------------------------//
+ //------------Sección de estilos ----------------------//
+//----------------------------------------------------//
+// Esto activa el hover
+let hoverDW = document.querySelectorAll('.hoverDW');
+// A estos agregaré el hovered
+let load__barDW = document.querySelector('.load__barDW');
+let loadDW = document.querySelector('.loadDW');
+// Ejecucion del hovered
+hoverDW.forEach(function (hoverDW){
+    hoverDW.addEventListener('mouseenter', function(){
+        load__barDW.classList.add('hovered');
+        loadDW.classList.add('hovered');
+    });
+    hoverDW.addEventListener('mouseleave', function(){
+        load__barDW.classList.remove('hovered');
+        loadDW.classList.remove('hovered');
+    });
+});
+
 
 
   //--------------------------------------------------------------//
@@ -43,29 +63,26 @@
 // Selecciona el formulario por su ID
 const form = document.getElementById('miFormulario');
 
-// Escucha el evento submit del formulario
-form.addEventListener('submit', function (event) {
-    // Evita el envío si los campos no son válidos
-    if (!form.checkValidity()) {
-        event.preventDefault(); // Evita que se envíe el formulario
-        event.stopPropagation(); // Detiene la propagación del evento
-    }
-    // Añade la clase was-validated para que Bootstrap gestione los estilos de validación
-    form.classList.add('was-validated');
-}, false);
-//Honeypot
-document.getElementById('miFormulario').addEventListener('submit', function(event) {
+// Honeypot
+form.addEventListener('submit', function(event) {
     const honeypot = document.getElementById('website');
     
     if (honeypot.value !== '') {
         // Si el honeypot tiene algún valor, lo tratamos como spam
         event.preventDefault();
         alert('Parece que eres un bot, formulario bloqueado.');
+        return; // Detenemos la ejecución si es un bot
     }
-});
-// Aviso de envío exitoso
-document.getElementById('miFormulario').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Lógica para enviar el formulario
-    document.getElementById('mensajeExito').classList.remove('d-none');
+
+    // Validar el formulario
+    if (!form.checkValidity()) {
+        event.preventDefault(); // Evita que se envíe el formulario si no es válido
+        event.stopPropagation(); // Detiene la propagación del evento
+        form.classList.add('was-validated');
+        return; // Salimos si el formulario no es válido
+    }
+
+    // Si llegamos aquí, significa que el formulario es válido
+    event.preventDefault(); // Solo evitamos el envío para la demostración
+    document.getElementById('mensajeExito').classList.remove('d-none'); // Mostramos el mensaje de éxito
 });
