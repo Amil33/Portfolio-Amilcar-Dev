@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--colorH);
 }
 /*-- Estilo general de los parrafos --*/
-p {
+p , .tooltip {
     font-family: 'Roboto',sans-serif;
     font-size: clamp(14px, 2vw, 18px);
     line-height: 1.5;
@@ -45,6 +45,9 @@ p {
 /*--- Estilo básico de botón ---*/
 .btn {
     background-color: var(--colorBgSec);
+}
+.btn a {
+    text-decoration: none;
     color: var(--colorBG);
 }
 /*--------- Fin de las configuraciones globales ---------*/
@@ -182,6 +185,8 @@ p {
 }
 .img__profile {
     position: relative;
+    max-height: 300px;
+    width: 100%;
     z-index: 10;
     opacity: 0;
     animation: aparecer 1s linear .8s forwards;
@@ -306,12 +311,10 @@ p {
 }
 .profile__img-container {
     height: auto;
-    max-height: 100%;
     overflow: hidden;
 }
-.profile__img {
+.img__profile {
     height: 100%;
-    width: auto;
     object-fit: cover;
 }
 .profile__data-container {
@@ -486,7 +489,7 @@ p {
 .footer {
     background: linear-gradient(to top, 
     var(--colorH) 0%,
-    var(--colorBgSec) 30%,          
+    var(--colorBgSec) 50%,          
     var(--colorButton) 100%);
     color: var(--colorBG);
     width: 100%;
@@ -498,13 +501,59 @@ p {
 .footer__redes-container {
     width: 400px;
 }
+.footer__icon-container {
+    position: relative;
+}
+/* Prueba de tooltip*/
 .footer__icon {
     font-size: 40px;
     color: var(--colorBG);
 }
+/* Estilos del tooltip */
+.tooltip {
+    visibility: hidden; /* Oculto por defecto */
+    background-color: var(--hoverShadow); /* Color de fondo del tooltip */
+    color: var(--colorBG); /* Color del texto */
+    text-align: center;
+    padding: 0.5rem;
+    
+    /* Borde transparente para que el gradiente se vea bien con el border-radius */
+    border: 2px solid transparent; 
+    border-radius: 12px;
+
+    /* Usamos background-clip y un gradiente para el borde */
+    background-clip: padding-box; /* Para que el fondo no cubra el borde */
+    background: linear-gradient(var(--hoverShadow), var(--hoverShadow)) padding-box, 
+                linear-gradient(to bottom, var(--colorBG), var(--buttonHover)) border-box;
+
+    position: absolute;
+    bottom: 150%; /* Ajusta la posición por encima del icono */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 10;
+    white-space: nowrap; /* Evita que el texto del tooltip se corte en varias líneas */
+}
+/* Flecha del tooltip */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Coloca la flecha debajo del tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--hoverShadow) transparent transparent transparent; /* Crea la flecha con el mismo color que el tooltip */
+}
+/* Mostrar el tooltip al hacer hover en el icono */
+.footer__icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* */
 .footer__icon:hover {
     color: var(--hoverShadow);
-    text-shadow: 2px 2px 8px var(--colorBG);
 }
 .btn--cv {
     background-color: var(--colorH);
@@ -519,8 +568,8 @@ p {
 }
 
 .btn--cv:hover {
-    background-color: var(--hoverShadow);
-    box-shadow: 2px 2px 8px var(--buttonHover);
+    background-color: var(--buttonHover);
+    box-shadow: 2px 2px 8px var(--hoverShadow);
 }
 .btn--cv a:hover {
     color: var(--colorBG);
@@ -540,6 +589,10 @@ p {
         height: 750px;
         max-height: 100%;
     }
+    .img__profile {
+        max-height: 100%;
+        width: 380px;
+    }
     .img-profile__fondo {
         height: 70%;
         border-radius: 45% 45% 0 0;
@@ -553,7 +606,15 @@ p {
 }
 @media (min-width: 1024px) {
     .img__profile {
-        height: 100%;
+        width: 426px;
+    }
+}
+@media (min-width: 1440px) {
+    .hero__img-profile-container {
+        height: 870px;
+    }
+    .img__profile {
+        width: 600px;
     }
 }
 /* querys de disponibilidad */

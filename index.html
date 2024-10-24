@@ -4,7 +4,20 @@
     <!-- Meta Tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este es el portfolio de Amilcar Noel Alsina, desarrollador web front end.">
+    <meta http-equiv="Content-Language" content="es">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="keywords" content="Portfolio de programador, Desarrollo Web, Front-end, Freelance, Desarrollo de sitios Web, HTML5, CSS3, JavaScript, React, Bootstrap, Git, GitHub, Sass, Responsive Design, UX, UI, SEO Básico, Sitios Web interactivos, Aplicaciones Web, Proyectos Front-end, Programador en búsqueda de empleo,">
+    <meta name="author" content="Amilcar Noel Alsina">
+    <meta name="robots" content="noindex, nofollow">
     <!-- Meta graph-->
+    <meta property="og:title" content="Amilcar.A - Programador Front End">
+    <meta property="og:description" content="Desarrollo de paginas webs modernas y responsivas">
+    <meta property="og:url" content="https://amil33.github.io/Portfolio-Amilcar-Dev/">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Portfolio de Amilcar">
+    <meta name="copyright" content="© 2024 Amilcar Noel">
     <!-- JS -->
     <script defer src="assets/js/main.js"></script>
     <!-- Bootstrap -->
@@ -17,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Titulo -->
     <title>Amilcar Portfolio</title>
-    <link rel="icon" href="assets/images/imgPerfil.png" type="image/png">
+    <link rel="icon" href="assets/images/programacionWebIcon.png" type="image/png">
 </head>
 <body>
 
@@ -26,7 +39,7 @@
         <nav class="navbar navbar-expand-lg container-fluid d-flex">
                 <!-- Logo -->
                 <div class="navbar__brand-container column text-center">
-                    <a class="navbar-brand p-0 m-0" href="#">
+                    <a class="navbar-brand p-0 m-0" href="#miFormulario">
                         <p class="p-0 m-0">"Dando vida a tus ideas online"</p>
                     </a>
                 </div>
@@ -45,17 +58,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#proyectos">
                                 <p>Proyectos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#sobreMi">
                                 <p>Sobre mí</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#miFormulario">
                                 <p>Contáctame</p>
                             </a>
                         </li>
@@ -82,20 +95,20 @@
                         <p class="fw-bold">
                             Trabajemos en tus próximos proyectos.
                         </p>
-                        <button class="btn btn__contact">
-                            <i class="fas fa-laptop-code"></i>
-                            <span class="fw-bold">Contactame</span>
-                        </button>
+                        <a class="btn btn__contact my-2" href="#miFormulario">
+                                <i class="fas fa-laptop-code"></i>
+                                <span class="fw-bold">Contactame</span>
+                        </a>
                     </div>
                 </div>
                 <!-- Esta es la parte decorativa del Hero Section-->
-                <div class="col-sm-12 col-md-6 col-lg-5 col-xxl-5 offset-xxl-1 mt-auto">
+                <div class="col-sm-12 col-md-6 col-lg-5 col-xxl-5 offset-xxl-1">
                     <div class="hero__secundary d-flex flex-column">
                         <div class="hero__img-profile-container d-flex align-items-end justify-content-center">
                             <div class="img-profile__fondo mt-auto mx-auto"></div>
                             <picture>
-                                <source media="(min-width: 768px)" srcset="assets/images/perfilDesktopNoBg.png">
-                                <img src="assets/images/perfilMovileNoBg.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img__profile mt-auto img-fluid">
+                                <source media="(min-width: 768px)" srcset="assets/images/perfilCV.png">
+                                <img src="assets/images/perfilCVmobile.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img__profile mt-auto img-fluid">
                             </picture>
                         </div>
                         <!-- Doy a informar mi disponibilidad -->
@@ -112,7 +125,7 @@
                     </div>
                 </div><!-- Fin de la Hero section -->
             </section><!-- Inicia la seccion de proyectos -->
-            <section class="proyectos__container d-flex flex-column justify-content-center">
+            <section class="proyectos__container d-flex flex-column justify-content-center" id="proyectos">
                 <div>
                     <h2 class="my-5">Proyectos</h2>
                     <div class="proyectos__grid">
@@ -205,7 +218,7 @@
                 </div>
             </section><!-- Fin de la sección de proyectos -->
             <!-- Inicia la sección de Sobre mi-->
-            <section class="my-5 sobre-mi__wrapper">>
+            <section class="my-5 sobre-mi__wrapper" id="sobreMi">>
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <div class="profile__data-container">
                         <h2>¿Quién es Amilcar Alsina?</h2>
@@ -353,27 +366,30 @@
         <div class="d-flex flex-column flex-xxl-row">
             <div class="d-flex flex-column text-center">
                 <h4 class="m-0">Amilcar Noel Alsina</h4>
-                <p>Programador Front End</p>
+                <p class="my-2">Programador Front End</p>
             </div>
             <div class="container-fluid d-flex flex-column flex-md-row">
                 <div class="d-flex flex-column footer__principal m-0 m-lg-auto">
                     <p class="m-0"><strong>Contactame</strong></p>
-                    <p> No dudes en trabajar conmigo para tu proximo proyecto. </p>
+                    <p class="my-1"> No dudes en trabajar conmigo para tu proximo proyecto. </p>
+                    <p class="my-2">aamilcaru@gmail.com</p>
                 </div>
                 <div class="container-fluid d-flex flex-column m-0 p-0 footer__redes-container">
                     <p class="text-start text-md-center"><strong>Sigueme</strong></p>
                     <div class="d-flex flex-row justify-content-md-center">
-                        <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="footer__icon-container">
                             <i class="fab fa-github footer__icon px-3"></i>
+                            <p class="tooltip">GitHub</p> <!-- Tooltip para GitHub -->
                         </a>
-                        <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer__icon-container">
                             <i class="fab fa-linkedin footer__icon px-3"></i>
+                            <p class="tooltip">LinkedIn</p> <!-- Tooltip para LinkedIn -->
                         </a>
                     </div>
                 </div>
             </div>
             <button class="btn btn--cv my-5 m-auto">
-                <a href="assets/cv.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
+                <a href="assets/amilcarCV.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
             </button>
         </div>
         <div class="m-2 text-center">
