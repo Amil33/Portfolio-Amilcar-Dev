@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta Tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este es el portfolio de Amilcar Noel Alsina, desarrollador web front end.">
+    <meta http-equiv="Content-Language" content="es">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="keywords" content="Portfolio de programador, Desarrollo Web, Front-end, Freelance, Desarrollo de sitios Web, HTML5, CSS3, JavaScript, React, Bootstrap, Git, GitHub, Sass, Responsive Design, UX, UI, SEO Básico, Sitios Web interactivos, Aplicaciones Web, Proyectos Front-end, Programador en búsqueda de empleo,">
+    <meta name="author" content="Amilcar Noel Alsina">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Meta graph-->
+    <meta property="og:title" content="Amilcar.A - Programador Front End">
+    <meta property="og:description" content="Desarrollo de paginas webs modernas y responsivas">
+    <meta property="og:url" content="https://amil33.github.io/Portfolio-Amilcar-Dev/">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Portfolio de Amilcar">
+    <meta name="copyright" content="© 2024 Amilcar Noel">
+    <!-- JS -->
+    <script defer src="assets/js/main.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CDN para librería Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Montserrat y Roboto-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Titulo -->
+    <title>Amilcar Portfolio</title>
+    <link rel="icon" href="assets/images/programacionWebIcon.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg container-fluid d-flex">
+            <!-- Logo -->
+            <div class="navbar__brand-container column text-center">
+                <a class="navbar-brand p-0 m-0" href="#miFormulario">
+                    <p class="p-0 m-0">"Dando vida a tus ideas online"</p>
+                </a>
+            </div>                
+            <!-- Botón móvil de menú desplegable -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fs-1 fas fa-bars"></i>
+            </button>                
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">
+                            <p>Proyectos</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobreMi">
+                            <p>Sobre mí</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#miFormulario">
+                            <p>Contáctame</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="portfolio__wrapper container-fluid d-flex-column p-0 align-items-center text-center">
+            <section class="hero__container d-flex flex-column justify-content-end flex-md-row align-items-md-center">
+                <!-- Esta es la parte mas importante del Hero Section-->
+                <div class="hero__primary d-flex flex-column col-sm-12 col-md-6 col-lg-7 col-xxl-5 offset-xxl-1 mt-auto"> 
+                    <div class="hero__info text-center">
+                        <p>¡Hola! Yo soy</p>
+                        <h1 class="m-1">Amilcar Noel Alsina</h1>
+                        <p><strong>Programador Web Front End</strong></p>
+                    </div>
+                    <div class="p-2">
+                        <p class="w-60">
+                            Me apasiona crear sitios web modernos y accesibles con diseños responsivos, me esfuerzo cada día por mejorar mis habilidades y adquirir nuevas herramientas.</p>
+                    </div>
+                    <div>
+                        <p class="fw-bold">
+                            Trabajemos en tus próximos proyectos.
+                        </p>
+                        <a class="btn btn__contact my-2" href="#miFormulario">
+                                <i class="fas fa-laptop-code"></i>
+                                <p>Contactame</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- Esta es la parte decorativa del Hero Section-->
+                <div class="col-sm-12 col-md-6 col-lg-5 col-xxl-5 offset-xxl-1">
+                    <div class="hero__secundary d-flex flex-column">
+                        <div class="hero__img-profile-container d-flex align-items-end justify-content-center">
+                            <div class="img-profile__fondo mt-auto mx-auto"></div>
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="assets/images/perfilCV.png">
+                                <img src="assets/images/perfilCVmobile.png" alt="Foto de perfil de Amilcar Noel Alsina" class="img__profile mt-auto img-fluid">
+                            </picture>
+                        </div>
+                        <!-- Doy a informar mi disponibilidad -->
+                        <div class="d-flex flex-column hero__disponibilidad">
+                            <div class="hero__freelancer d-flex flex-row justify-content-center align-items-center p-3 mt-auto">
+                                <i class="fas fa-check me-2 hero__icon-fl fs-1"></i>
+                                <p class="m-0">Disponible para contrataciones</p>
+                            </div>
+                            <div class="hero__contrato d-flex flex-row justify-content-center align-items-center p-3 mt-auto">
+                                <i class="fas fa-check me-2 hero__icon-c fs-1"></i>
+                                <p class="m-0">Disponible para encargos Freelancer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Fin de la Hero section -->
+            </section><!-- Inicia la seccion de proyectos -->
+            <section class="proyectos__container d-flex flex-column justify-content-center" id="proyectos">
+                <div>
+                    <h2 class="my-5">Proyectos</h2>
+                    <div class="proyectos__grid">
+                        <!-- Modelo de proyecto en desarrollo -->
+                        <!-- <div class="proyectos proyectos--nro proyectos--desarrollando">
+                            <p> En desarrollo</p>
+                            <div>
+                                <i class="fas fa-cog gear"></i>
+                            </div>
+                        </div> 
+                        Modelo de proyecto finalizado
+                        <div class="proyectos proyectos--nro">
+                            <h3>Proyecto 2</h3>
+                            <p> Descripcion del proyecto</p>
+                            <div class="proyectos__iconos">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
+                        </div>
+                        -->
+                        <div class="proyectos proyectos--uno proyectos--desarrollando">
+                            <p class="fs-2"> En desarrollo</p>
+                            <div>
+                                <i class="fas fa-cog gear"></i>
+                            </div>
+                        </div>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyectos--dos opacity-25">
+                            <div class="invisible">
+                                <h3>Proyecto 2</h3>
+                                <p> Descripcion del proyecto</p>
+                                <div class="proyectos__iconos">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-js"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyectos--tres opacity-25">
+                            <div class="invisible">
+                                <h3>Proyecto 3</h3>
+                                <p> Descripcion del proyecto</p>
+                                <div class="proyectos__iconos">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-js"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyectos--cuatro opacity-25">
+                            <div class="invisible">
+                                <h3>Proyecto 4</h3>
+                                <p> Descripcion del proyecto</p>
+                                <div class="proyectos__iconos">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                                        </div>
+                            </div>
+                        <!-- Inicia otro proyecto -->
+                        <div class="proyectos proyectos--cinco opacity-25">
+                            <div class="invisible">
+                                <h3>Proyecto 5</h3>
+                                <p> Descripcion del proyecto</p>
+                                <div class="proyectos__iconos">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-js"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inicia otro proyecto -->
+                        <a class="proyectos proyectos--seis" href="#">
+                            <div>
+                                <p><span class="fw-bold">"El proyecto más importante, eres tu."</span></p>
+                            </div>
+                            <div class="proyectos__iconos">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <p>¿Listo para comenzar?</p>
+                            </div>
+                        </a>
+                        <!-- Inicia otro proyecto -->
+                    </div>
+                </div>
+            </section><!-- Fin de la sección de proyectos -->
+            <!-- Inicia la sección de Sobre mi-->
+            <section class="my-5 sobre-mi__wrapper" id="sobreMi">>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="profile__data-container">
+                        <h2>¿Quién es Amilcar Alsina?</h2>
+                        <p>
+                            Soy un apasionado de la tecnología, en proceso de profesionalización en el desarrollo front-end. Actualmente, estoy estudiando en CoderHouse.
+                        </p>
+                        <p><span class="fw-bold">Además...</span>
+                            <br>
+                            Estoy complementando mi formación aprendiendo sobre diseño, UX y UI, para mejorar la calidad de mi trabajo. En el futuro, también me gustaría aprender sobre back-end para ampliar mi comprensión de esta área de trabajo.
+                        </p>
+                        <p><span class="fw-bold">A largo plazo...</span>
+                            <br>
+                            Planeo estudiar una tecnicatura en Ciencia de Datos e IA, ya que me interesa explorar aún más el impacto que tendrá esta tecnología en el futuro.
+                            <br>
+                        </p>
+                        <p><span class="fw-bold">Anteriormente...</span>
+                            <br>
+                            He desarrollado habilidades blandas como el trabajo en equipo, la comunicación efectiva y la resolución de problemas bajo presión, tras 9 años de servicio en una Fuerza de Seguridad. Además, luego de haber cursado sobre desarrollo de videojuegos, aprendí a "gamificar" actividades para lograr objetivos con mayor motivación y me informé sobre ciberseguridad para estar al tanto de vulnerabilidades básicas que podrían afectar mis futuros proyectos.
+                        </p>
+                    </div>    
+                    <div class="d-flex flex-column flex-md-row justify-content-around container-fluid">
+                        <div class="profile__skills-container col-md-5">
+                            <h2>Habilidades</h2>
+                            <ul>
+                                <li class="profile__skills">
+                                    <div class="load__bar load__barDW">
+                                        <div class="load bar30 loadDW">
+                                            Básico
+                                        </div>
+                                    </div>
+                                    <span class="profileSkillName">HTML, CSS y JS</span>
+                                </li>
+                                <li class="profile__skills">
+                                    <div class="load__bar">
+                                        <div class="load bar40">
+                                            <i class="fab fa-bootstrap load__herr"></i>
+                                            <i class="fab fa-sass load__herr"></i>
+                                            <i class="fab fa-git-alt load__herr"></i>
+                                            <i class="fab fa-wordpress load__herr"></i>
+                                        </div>
+                                    </div>
+                                    <span class="profileSkillName">Herramientas</span>
+                                </li>
+                                <li class="profile__skills">
+                                    <div class="load__bar">
+                                        <div class="load bar30">
+                                            Básico
+                                        </div>
+                                    </div>
+                                    <span class="profileSkillName">Diseño, UX y UI</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="certificados__container d-flex flex-column align-items-center justify-content-start">
+                            <h3 class="">Certificaciones</h3>
+                            <div class="d-flex flex-column flex-lg-row justify-content-center">
+                                <div class="certificados__web">
+                                    <button class="btn btn--web btn--cert hoverDW" type="button" data-bs-toggle="collapse" data-bs-target="#certDesarrollo" aria-expanded="false" aria-controls="certDesarrollo">
+                                        Desarrollo Web (Front-end)
+                                    </button>
+                                    <div class="collapse" id="certDesarrollo">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <p class="hoverDW">
+                                                        Desarrollo Web (CoderHouse)
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <p class="hoverDW">
+                                                        JavaScript (Coder House)
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    React (CoderHouse) (Proximamente...)
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="certificados__design">
+                                    <button class="btn btn--design btm--cert" type="button" data-bs-toggle="collapse" data-bs-target="#certDiseño" aria-expanded="false" aria-controls="certDiseño">
+                                        Diseño y UIX
+                                    </button>
+                                    <div class="collapse" id="certDiseño">
+                                        <ul>
+                                            <li><p>Proximamente...</p></li>
+                                            <!-- Añade más certificados aquí -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="form m-auto">
+                <p class="fs-1 pt-3">Formulario de Contacto<p>
+                <form id="miFormulario" class="container" novalidate>
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div class="mb-3 col-lg-5">
+                            <label for="nombre" class="form-label">Nombre o Empresa</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre o empresa" required aria-label="Nombre completo">
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu nombre o el de la empresa.
+                            </div>
+                        </div>
+                        <div class="mb-3 col-lg-5 offset-lg-2">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un correo electrónico válido.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escriba su mensaje" required aria-label="Mensaje"></textarea>
+                        <div class="invalid-feedback">
+                            El mensaje no puede estar vacío.
+                        </div>
+                    </div>
+                    <!-- Honeypot (Campo oculto para bots) -->
+                    <div class="honeypot">
+                        <label for="website" class="form-label">Website (Dejar en blanco)</label>
+                        <input type="text" id="website" name="website" class="form-control" placeholder="No llenar este campo">
+                    </div>
+                    <div id="mensajeExito" class="alert alert-success d-none" role="alert">
+                        ¡Mensaje enviado con éxito!
+                    </div>
+                    <button type="submit" class="btn btn--submit btn-lg w-100">Enviar</button>
+                </form>
+            </section>
+            <div class="espaciador"> 
+                <!-- Este div solo genera un espacio-->
+                </div>
+        </div>
+    </main>
+
+    <footer class="footer container-fluid d-flex flex-column p-3 m-0">
+        <div class="d-flex flex-column flex-xxl-row">
+            <div class="d-flex flex-column text-center">
+                <h4 class="m-0">Amilcar Noel Alsina</h4>
+                <p class="my-2">Programador Front End</p>
+            </div>
+            <div class="container-fluid d-flex flex-column flex-md-row">
+                <div class="d-flex flex-column footer__principal m-0 m-lg-auto">
+                    <p class="m-0"><strong>Contactame</strong></p>
+                    <p class="my-1"> No dudes en trabajar conmigo para tu proximo proyecto. </p>
+                    <p class="my-2">aamilcaru@gmail.com</p>
+                </div>
+                <div class="container-fluid d-flex flex-column m-0 p-0 footer__redes-container">
+                    <p class="text-start text-md-center"><strong>Sigueme</strong></p>
+                    <div class="d-flex flex-row justify-content-md-center">
+                        <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="footer__icon-container">
+                            <i class="fab fa-github footer__icon px-3"></i>
+                            <p class="tooltip">GitHub</p> <!-- Tooltip para GitHub -->
+                        </a>
+                        <a href="www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer__icon-container">
+                            <i class="fab fa-linkedin footer__icon px-3"></i>
+                            <p class="tooltip">LinkedIn</p> <!-- Tooltip para LinkedIn -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn--cv my-5 m-auto">
+                <a href="assets/amilcarCV.pdf" download="amilcarDevCV.pdf">Descargar CV.pdf</a>
+            </button>
+        </div>
+        <div class="m-2 text-center">
+            <i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.
+        </div>
+    </footer>
+    <!-- Fin del Footer -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
