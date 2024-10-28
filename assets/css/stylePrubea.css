@@ -6,7 +6,7 @@
     --color-primary: #00B4D8;
     --color-secundary: #90E0EF;
     --color-bg: #CAF0F8;
-    --color-shadow: #333;
+    --color-shadow: #03045e99;
     /* Estilo de fuentes */
     --font-family-h: 'Montserrat',sans-serif;
     --font-weight-bold-h: 700;
@@ -19,12 +19,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+body {
+    background-color: var(--color-bg);
 }
 /*-- Estilo general de los H --*/
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-h);
     font-size: var(--font-weight-bold-h);
-    letter-spacing: 0,0625rem;
+    letter-spacing: 0.0625rem;
     color: var(--color-h);
 }
 /*-- Estilo general de los parrafos --*/
@@ -57,11 +61,16 @@ p , .tooltip {
     max-width: 425px;
     padding: clamp(0.5rem, 3vw, 0,75rem) clamp(1rem, 2vw, 1.5rem);
     background-color: var(--color-primary);
-}
-.btn a {
-    text-decoration: none;
     color: var(--color-bg);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    box-shadow: 2px 2px 6px var(--color-p);
+    
 }
+.btn p {
+    color: inherit;
+}
+
 /*============ Fin de las configuraciones globales ===============*/
 
 
@@ -75,12 +84,11 @@ p , .tooltip {
     position: sticky;
     top: 0;
     z-index: 10;
-    height: 4rem;
-    color: var(--color-p);
-    background-color: var(--color-bg);
 }
 .navbar {
+    color: var(--color-h);
     padding: 0.75rem 1rem;
+    height: 4rem;
     animation: 3s adaptNav both;
     animation-timeline: scroll();
     animation-range: 1rem 10rem;
@@ -91,14 +99,17 @@ p , .tooltip {
 .navbar-brand p {
     font-size: clamp(0.750rem, 2vw, 1.25rem);
     font-weight: var(--font-weight-medium);
-    letter-spacing: 0,0650rem;
+    letter-spacing: 0.0650rem;
     color: inherit;
-    transition: color 1s ease;
+    background-color: inherit;
+    border-radius: 8px;
+    transition: color 1s ease, background-color 1s ease;
 }
 .navbar-brand p:hover {
     background-color: var(--color-primary);
-    width: 105%;
+    color: var(--color-bg);
     border-radius: 8px;
+    box-shadow: 2px 2px 6px var(--color-p);
 }
 .navbar .navbar-toggler {
     color: inherit;
@@ -112,11 +123,16 @@ p , .tooltip {
 .nav-link p{
     font-size: clamp(1rem, 2vw, 1.3rem);
     color: inherit;
-    transition: color .5s ease;
+    padding: 0.5rem;
+    background-color: inherit;
+    border-radius: 8px;
+    transition: color 1s ease, background-color 1s ease;;
 }
 .nav-link p:hover {
-    color: var(--buttonHover);
-    text-shadow: 1px 1px 22px var(--hoverShadow);
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px var(--color-p);
 }
 /*============ Fin del Navbar ================*/
 
@@ -129,9 +145,10 @@ p , .tooltip {
 /*=========================================*/
 .main {
     display: grid;
-    grid-template-rows: calc(100dvh - 4rem) auto auto; /* 100vh para la hero section */
-    gap: 20px; /* Espacio entre secciones */
-    background-color: var(--color-bg);
+    grid-template-rows: calc(100dvh - 4rem) auto auto auto; /* 100vh para la hero section */
+    place-content: center;
+    padding: 0 clamp(1rem, 5vw, 2rem);
+    gap: 6rem; /* Espacio entre secciones */
 }
 /*============ Fin del Main ================*/
 
@@ -141,14 +158,14 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion del Hero ==============*/
 /*=========================================*/
-.hero__container {
+.hero__info-container {
     animation: aparecer 3s linear 2s both;
 }
 .hero__saludo {
     margin-bottom: 0.5rem;
 }
 .hero__info-container h1 {
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
     font-weight: var(--font-weight-bold-h);
 }
 .hero__profesion {
@@ -157,9 +174,45 @@ p , .tooltip {
 .hero__saludo, .hero__profesion {
     font-weight: var(--font-weight-medium);
 }
+.hero__llamado {
+    font-weight: var(--font-weight-medium);
+}
 .btn__contact i {
     padding: 0 0.5rem;
     font-size: 1.5rem;
+}
+.btn__contact:hover {
+    background-color: var(--color-h);
+    color: var(--color-bg);
+    text-shadow: 1px 1px 8px var(--color-bg);
+}
+/* imagen */
+.hero__img-container{
+    position: relative;
+    max-height: 100%;
+}
+.hero__img-fondo {
+    width: 0%;
+    height: 0%;
+    background-color: var(--color-primary);
+    border-radius: 50% 50% 8px 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    box-shadow: 1px 1px 12px var(--color-shadow);
+    animation: expandBackground 1s ease-out .5s forwards;
+}
+.hero__img {
+    position: relative;
+    z-index: 10;
+    max-height: 88dvh;
+    animation: aparecer .5s linear 0.3s forwards;
+    object-fit: cover;
+    filter: drop-shadow(1px 1px 4px var(--color-p));
+    opacity: 0;
 }
 /*============ Fin del Hero ================*/
 
@@ -171,7 +224,77 @@ p , .tooltip {
  /* ======== Seccion de Proyectos ==========*/
 /*=========================================*/
 .proyectos__container {
-    padding: 20px; /* Ajusta el padding según sea necesario */
+    max-width: 1300px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
+}
+h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+.proyectos__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.proyectos {
+    display: grid;
+    place-content: center;
+    color: var(--color-bg);
+    background: linear-gradient(to bottom, 
+    var(--color-h) 0%,
+    var(--color-primary) 60%,         
+    var(--color-secundary) 100%);
+    box-shadow: 2px 2px 6px var(--color-p);
+    transition: background 5s ease, box-shadow 0.5s ease;
+    position: relative;
+    padding: 0.5rem;
+    width: 100%;
+    min-height: 100%;
+    text-decoration: none;
+    border-radius: 8px;
+    z-index: 2;
+}
+.proyectos p{
+    letter-spacing: 1.5px;
+}
+.proyectos__iconos i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 8px var(--color-shadow);
+}
+.proyectos--desarrollando {
+    background-color: var(--colorButton);
+    opacity: 1;
+}
+.gear {
+    font-size: 7rem;
+    text-shadow: 1px 1px 8px var(--color-shadow);
+    animation: gearSpin 10s linear infinite;
+}
+.proyecto--seis p, div {
+    z-index: 3;
+}
+.proyectos--seis:hover {
+    box-shadow: 2px 2px 6px var(--color-p);
+}
+.proyectos--seis::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+    var(--color-primary) 0%,
+    var(--color-secundary) 70%);
+    opacity: 0;
+    transition: opacity 1s ease;
+    border-radius: 8px;
+    z-index: 1;
+}
+.proyectos--seis:hover::before {
+    opacity: 1;
 }
 /*============ Fin de Proyectos ================*/
 
@@ -183,10 +306,144 @@ p , .tooltip {
  /* ======== Seccion de Sobre mi  ==========*/
 /*=========================================*/
 .sobre-mi__container {
-    padding: 20px; /* Ajusta el padding según sea necesario */
+    gap: 5rem;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
+    /* background: linear-gradient(to bottom, 
+    var(--color-bg) 0%,       
+    var(--color-secundary) 30%,   
+    var(--color-bg) 100%); */
+}
+.sobre-mi__container h3 {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    font-weight: var(--font-weight-bold-h);
+}
+.sobre-mi__info {
+    max-width: 800px;
+    background-color: var(--color-secundary);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border-radius: 12px;
+    box-shadow: 1px 1px 6px var(--color-p);
+}
+.sobre-mi__info p {
+    text-align: left;
+}
+.sobre-mi__info p span {
+    font-weight: var(--font-weight-medium);
+}
+.sobre-mi__sub-container {
+    max-width: 70rem;
+    background-color: var(--color-secundary);
+    border-radius: 8px;
+    box-shadow: 1px 1px 6px var(--color-p);
+    padding: 0.250rem 0;
+    gap: 3rem;
+}
+.sobre-mi__skills-container {
+    max-width: 30rem;
+    letter-spacing: 0.0650rem;
+    /* animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%; */
+}
+.sobre-mi__skills-container ul {
+    gap: 1rem;
+    max-width: 38rem;
+} 
+.sobre-mi__skills {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    list-style: none;
+}
+.skill__name {
+    margin: 0;
+}
+.load__bar {
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 0.0650rem;
+    width: 100%;
+    margin: 0.0650rem;
+    text-align: center;
+    margin: 0.0650rem;
+    transition: border 1s ease, box-shadow 1s ease;
+}
+.load {
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    margin: 0.1rem;
+    transition: background-color 1s ease;
+}
+.load p {
+    margin: 0;
+    color: var(--color-bg);
+}
+.load__barDW.hovered {
+    border: 1px solid var(--color-h);
+    box-shadow: 1px 1px 6px var(--color-p);
+}
+.loadDW.hovered {
+    background-color: var(--color-h);
+}
+.load__herr {
+    margin: 0 clamp(0, 0.2vw, 0.0775rem);
+}
+.bar30 {
+    width: 30%;
+}
+.bar40 {
+    width: 45%;
+} */
+/* Certificaciones */
+.certificados__container {
+    letter-spacing: 0,5px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 30%;
+}
+.certificados__principales, .certificados__complementarios {
+    font-weight: var(--font-weight-medium);
+    margin: 2rem 0 1rem 0;
+}
+.collapse ul{
+    padding: 0;
+}
+.collapse ul li {
+    list-style: none;
+    margin-top: 1.250rem;
+}
+.collapse ul li a {
+    text-decoration: none;
+    letter-spacing: 0.0650px;
+}
+.collapse ul li a:hover {
+    color: var(--color-secundary);
+}
+.collapse ul li a p{
+    margin-top: 0.250rem;
+}
+.certificados__web, .certificados__design, .certificados__ciberseguridad, .certificados__game {
+    margin: 1rem;
+}
+/* Certificaciones principales */
+.btn--web , .btn--design, .btn--security, .btn--game {
+    width: clamp(16rem, 5vw, 17rem);
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    box-shadow: 2px 2px 8px var(--color-p);
+    transition: background-color 1s ease, box-shadow 1s ease;
+}
+.btn--web:hover , .btn--design:hover, .btn--security:hover, .btn--game:hover {
+    background-color: var(--color-h);
+    box-shadow: 2px 2px 8px var(--color-p);
+    color: var(--color-bg);
+}
+.btn--cert div ul li p{
+    color: var(--color-primary);
 }
 /*============ Fin de Sobre mi ================*/
-
 
 
 
@@ -194,9 +451,146 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion de Footer =============*/
 /*=========================================*/
+.form__container {
+    padding: 1rem;
+    background-color: var(--color-secundary);
+    color: var(--color-p);
+    border-radius: 12px;
+    box-shadow: 1px 1px 6px var(--color-p);
+    max-width: 38rem;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% contain 50%;
+}
+.form__nombre, .form__email, .form__message {
+    margin: 0.0625rem;
+}
+#nombre, #email, #mensaje {
+    background-color: var(--color-bg); 
+    color: var(--color-p); 
+}
+
+.invalid-feedback {
+    color: var(--color-p);
+}
+.honeypot {
+    display: none; /* Oculta el campo honeypot para los usuarios */
+}
+.btn--submit{
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+
+    transition: background-color 1s ease;
+}
+.btn--submit:hover {
+    background-color: var(--color-h);
+}
+/* Cambiar el color de fondo de los campos de entrada form */
+#nombre:focus, #email:focus, #mensaje:focus {
+    border: 2px solid var(--color-p);
+}
+/*============ Fin de Form ================*/
+
+
+  /*=========================================*/
+ /* ======== Seccion de Footer =============*/
+/*=========================================*/
+/* .gradiente__footer {
+    height: 2rem;
+    background: linear-gradient(to top, 
+    var(--color-secundary) 0%,          
+    var(--color-bg) 100%);
+} */
 .footer {
+    background: linear-gradient(to top, 
+    var(--color-h) 0%,
+    var(--color-primary) 50%,          
+    var(--color-secundary) 100%);
+    width: 100%;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+}
+.footer__sub-container {
+    gap: 1rem;
+}
+.footer__redes-container {
+    max-width: 35rem;
+}
+.footer__principal {
+    gap: 1rem;
+}
+.footer__redes, .footer__llamado, .footer__brand {
+    font-weight: var(--font-weight-medium);
+    text-shadow: 2px 2px 8px var(--color-bg);
+}
+.footer__icon-container {
+    position: relative;
+}
+/* Prueba de tooltip*/
+.footer__icon {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--color-bg);
+    text-shadow: 2px 2px 8px var(--color-p);
+}
+/* Estilos del tooltip */
+.tooltip {
+    visibility: hidden; /* Oculto por defecto */
+    background-color: var(--color-p); /* Color de fondo del tooltip */
+    color: var(--color-bg); /* Color del texto */
     text-align: center;
-    padding: 10px; /* Ajusta el padding según sea necesario */
+    padding: 0.5rem;
+    /* Borde transparente para que el gradiente se vea bien con el border-radius */
+    border: 2px solid transparent; 
+    border-radius: 12px;
+    /* Usamos background-clip y un gradiente para el borde */
+    background-clip: padding-box; /* Para que el fondo no cubra el borde */
+    background: linear-gradient(var(--color-p), var(--color-p)) padding-box, linear-gradient(to bottom, var(--color-bg), var(--color-secundary)) border-box;
+    position: absolute;
+    bottom: 150%; /* Ajusta la posición por encima del icono */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 10;
+    white-space: nowrap; /* Evita que el texto del tooltip se corte en varias líneas */
+}
+/* Flecha del tooltip */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Coloca la flecha debajo del tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-p) transparent transparent transparent; /* Crea la flecha con el mismo color que el tooltip */
+}
+/* Mostrar el tooltip al hacer hover en el icono */
+.footer__icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* */
+.footer__icon:hover {
+    color: var(--hoverShadow);
+}
+.btn--cv {
+    background-color: var(--color-bg);
+    border-radius: 15px;
+    width: 12.5rem;
+    max-height: 50px;
+    color: var(--color-p);
+    font-weight: var(--font-weight-medium);
+    box-shadow: 2px 2px 8px var(--color-p);
+}
+.btn--cv:hover {
+    color: var(--color-bg);
+    background-color: var(--color-p);
+    border: 2px solid var(--color-bg);
+    box-shadow: 2px 2px 8px var(--hoverShadow);
+}
+.footer a {
+    text-decoration: none;
 }
 /*============ Fin de Footer ===============*/
 
@@ -207,7 +601,40 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion de Keyframes ==========*/
 /*=========================================*/
-
+@keyframes adaptNav { /*---- Adaptacion del navbar ---*/
+    100% {
+        background-color: #0077B6dd;
+        color: var(--color-bg);
+    }
+}
+/* keyframes de hero section */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes expandBackground { /*expandir el fondo */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        width: 90%;
+        height: 80%;
+        opacity: 1;
+    }
+}
+/* Keyframes de proyectos */
+@keyframes gearSpin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /*============ Fin de Keyframes ==============*/
 
 
@@ -217,5 +644,26 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion del Querys ============*/
 /*=========================================*/
-
+/* Media query de proyectos */
+@media (min-width: 768px) {
+    .proyectos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+        gap: 2.5rem;
+    }
+    .proyectos--uno {
+        grid-column: span 2;
+    }
+    .proyectos--seis {
+        grid-column: span 2;
+    }
+}
+@media (min-width: 1440px) {
+    .proyectos--uno {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .proyectos--seis {
+        grid-column: span 4;
+    }
+}
 /*============ Fin de Querys ================*/

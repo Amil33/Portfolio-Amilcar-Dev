@@ -327,7 +327,7 @@ p , .tooltip {
     var(--colorBG) 0%,       
     #20b2aa66 30%,   
     var(--colorBG) 100%);
-}
+/* }
 .profile__img-container {
     height: auto;
     overflow: hidden;
@@ -335,7 +335,7 @@ p , .tooltip {
 .img__profile {
     height: 100%;
     object-fit: cover;
-}
+} */
 .profile__data-container {
     /* background-color: #20b2aa44;
     border-radius: 12px; */
@@ -535,16 +535,12 @@ p , .tooltip {
     color: var(--colorBG); /* Color del texto */
     text-align: center;
     padding: 0.5rem;
-    
     /* Borde transparente para que el gradiente se vea bien con el border-radius */
     border: 2px solid transparent; 
     border-radius: 12px;
-
     /* Usamos background-clip y un gradiente para el borde */
     background-clip: padding-box; /* Para que el fondo no cubra el borde */
-    background: linear-gradient(var(--hoverShadow), var(--hoverShadow)) padding-box, 
-                linear-gradient(to bottom, var(--colorBG), var(--buttonHover)) border-box;
-
+    background: linear-gradient(var(--hoverShadow), var(--hoverShadow)) padding-box, linear-gradient(to bottom, var(--colorBG), var(--buttonHover)) border-box;
     position: absolute;
     bottom: 150%; /* Ajusta la posición por encima del icono */
     left: 50%;
