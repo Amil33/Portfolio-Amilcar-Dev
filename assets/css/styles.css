@@ -145,7 +145,7 @@ p , .tooltip {
 /*=========================================*/
 .main {
     display: grid;
-    grid-template-rows: calc(100dvh - 4rem) auto auto auto; /* 100vh para la hero section */
+    grid-template-rows: calc(100dvh - 4rem) auto auto auto; /* 100vh para la hero section, auto para "proyectos, sobre mi y form" */
     place-content: center;
     padding: 0 clamp(1rem, 5vw, 2rem);
     gap: 6rem; /* Espacio entre secciones */
@@ -158,28 +158,32 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion del Hero ==============*/
 /*=========================================*/
+.hero__container {
+    overflow: hidden;
+}
 .hero__info-container {
     animation: aparecer 3s linear 2s both;
 }
 .hero__saludo {
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(0.125rem, 2vw, 0.5rem);
 }
 .hero__info-container h1 {
-    font-size: clamp(2rem, 4vw + 1rem, 3rem);
+    font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
     font-weight: var(--font-weight-bold-h);
 }
 .hero__profesion {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(0.125rem, 2vw, 0.5rem);
 }
 .hero__saludo, .hero__profesion {
     font-weight: var(--font-weight-medium);
 }
 .hero__llamado {
+    margin-bottom: clamp(0.125rem, 2vw, 0.5rem);
     font-weight: var(--font-weight-medium);
 }
 .btn__contact i {
     padding: 0 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem)
 }
 .btn__contact:hover {
     background-color: var(--color-h);
@@ -189,7 +193,7 @@ p , .tooltip {
 /* imagen */
 .hero__img-container{
     position: relative;
-    max-height: 100%;
+    height: 100%;
 }
 .hero__img-fondo {
     width: 0%;
@@ -208,7 +212,7 @@ p , .tooltip {
 .hero__img {
     position: relative;
     z-index: 10;
-    max-height: 88dvh;
+    max-height: 80dvh;
     animation: aparecer .5s linear 0.3s forwards;
     object-fit: cover;
     filter: drop-shadow(1px 1px 4px var(--color-p));
@@ -225,6 +229,7 @@ p , .tooltip {
 /*=========================================*/
 .proyectos__container {
     max-width: 1300px;
+    min-height: 80dvh;
     animation: aparecer both;
     animation-timeline: view();
     animation-range: cover 5% contain 50%;
@@ -306,6 +311,7 @@ h2 {
  /* ======== Seccion de Sobre mi  ==========*/
 /*=========================================*/
 .sobre-mi__container {
+    min-height: 100dvh;
     gap: 5rem;
     animation: aparecer both;
     animation-timeline: view();
@@ -440,8 +446,15 @@ h2 {
     box-shadow: 2px 2px 8px var(--color-p);
     color: var(--color-bg);
 }
-.btn--cert div ul li p{
-    color: var(--color-primary);
+.certificados__fondo {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-h);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+
+}
+.cert {
+    color: var(--color-bg);
 }
 /*============ Fin de Sobre mi ================*/
 
@@ -505,10 +518,10 @@ h2 {
     background: linear-gradient(to top, 
     var(--color-h) 0%,
     var(--color-primary) 50%,          
-    var(--color-secundary) 100%);
+    var(--color-bg) 100%);
     width: 100%;
     padding: 1.5rem 2rem;
-    gap: 1rem;
+    gap: 3rem;
 }
 .footer__sub-container {
     gap: 1rem;
@@ -537,6 +550,7 @@ h2 {
     visibility: hidden; /* Oculto por defecto */
     background-color: var(--color-p); /* Color de fondo del tooltip */
     color: var(--color-bg); /* Color del texto */
+    text-shadow: 1px 1px 6px var(--color-bg);
     text-align: center;
     padding: 0.5rem;
     /* Borde transparente para que el gradiente se vea bien con el border-radius */
@@ -572,7 +586,8 @@ h2 {
 }
 /* */
 .footer__icon:hover {
-    color: var(--hoverShadow);
+    color: var(--color-h);
+    text-shadow: 1px 1px 6px var(--color-bg);
 }
 .btn--cv {
     background-color: var(--color-bg);
@@ -591,6 +606,9 @@ h2 {
 }
 .footer a {
     text-decoration: none;
+}
+.gradiente__footer {
+
 }
 /*============ Fin de Footer ===============*/
 
@@ -665,5 +683,9 @@ h2 {
     .proyectos--seis {
         grid-column: span 4;
     }
+}
+.footer__sub-container {
+    max-width: 1000px;
+    margin: auto;
 }
 /*============ Fin de Querys ================*/

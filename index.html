@@ -9,25 +9,37 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta name="keywords" content="Portfolio de programador, Desarrollo Web, Front-end, Freelance, Desarrollo de sitios Web, HTML5, CSS3, JavaScript, React, Bootstrap, Git, GitHub, Sass, Responsive Design, UX, UI, SEO Básico, Sitios Web interactivos, Aplicaciones Web, Proyectos Front-end, Programador en búsqueda de empleo,">
     <meta name="author" content="Amilcar Noel Alsina">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00B4D8"> <!--var color-primary-->
+
     <!-- Meta graph-->
     <meta property="og:title" content="Amilcar.A - Programador Front End">
     <meta property="og:description" content="Desarrollo de paginas webs modernas y responsivas">
-    <meta property="og:url" content="https://amil33.github.io/Portfolio-Amilcar-Dev/">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="amil33.github.io/Portfolio-Amilcar-Dev/">
+    <meta property="og:image" content="https://github.com/Amil33/Portfolio-Amilcar-Dev/blob/master/assets/images/perfilCV.png?raw=true">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Portfolio de Amilcar">
     <meta name="copyright" content="© 2024 Amilcar Noel">
+
+    <!-- Preconnect a los dominios de Bootstrap y Font Awesome -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- JS -->
     <script defer src="assets/js/main.js"></script>
+
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link defer href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- CDN para librería Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+
     <!-- Google Fonts Montserrat y Roboto-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
     <!-- Titulo -->
     <title>Amilcar Portfolio</title>
     <link rel="icon" href="assets/images/programacionWebIcon.png" type="image/png">
@@ -80,7 +92,7 @@
                 <h1>Amilcar Noel Alsina</h1>
                 <p class="hero__profesion">Programador Web Front End</p>
                 <p>
-                    Me apasiona crear sitios web modernos y accesibles con diseños responsivos, me esfuerzo cada día por mejorar mis habilidades y adquirir nuevas herramientas.
+                    Me apasiona crear sitios web modernos y accesibles con diseños responsivos.
                 </p>
                 <p class="hero__llamado mb-1">
                     Trabajemos en tus próximos proyectos.
@@ -90,10 +102,10 @@
                     <p class="m-0">Contactame</p>
                 </a>
             </div>
-            <div class="hero__img-container col-md-6 mt-auto"><!-- El hero -->
+            <div class="hero__img-container d-flex flex-column justify-content-end col-lg-6"><!-- El hero -->
                 <div class="hero__img-fondo mt-auto mx-auto"></div>
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="assets/images/perfilCV.png">
+                    <source media="(min-width: 1024px)" srcset="assets/images/perfilCV.png" class="mt-auto">
                         <img src="assets/images/perfilCVmobile.png" alt="Foto de perfil de Amilcar Noel Alsina" class="hero__img img-fluid">
                 </picture>
             </div>
@@ -174,7 +186,7 @@
                     </div>
                 </div>
                 <!-- Inicia otro proyecto -->
-                <a class="proyectos proyectos--seis" href="#">
+                <a class="proyectos proyectos--seis" href="#miFormulario">
                     <div>
                         <p><span class="fw-bold">"El proyecto más importante, eres tu."</span></p>
                     </div>
@@ -188,7 +200,7 @@
                 <!-- Inicia otro proyecto -->
             </div>
         </section><!-- Fin de la sección de proyectos -->
-        <section class="sobre-mi__container d-flex flex-column justify-content-center align-items-center">
+        <section class="sobre-mi__container d-flex flex-column justify-content-center align-items-center" id="sobreMi">
             <div class="sobre-mi__info text-center text-wrap">
                 <h3 class="mb-3">Conoce más sobre mi</h3>
                 <p>
@@ -247,17 +259,17 @@
                                 <p class="m-0">Desarrollo Web</p>
                             </button>
                             <div class="collapse" id="certDesarrollo">
-                                <ul>
+                                <ul class="certificados__fondo">
                                     <li>
-                                        <a href="#">
-                                            <p class="hoverDW">
+                                        <a href="https://www.coderhouse.com/ar/certificados/66ea01cf4ad6c48452cf859c?lang=es" class="cert">
+                                            <p class="hoverDW cert">
                                                 Desarrollo Web (CoderHouse)
                                             </p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <p class="hoverDW">
+                                            <p class="hoverDW cert">
                                                 JavaScript (Coder House)
                                             </p>
                                         </a>
@@ -302,7 +314,7 @@
                         </div>
                         <div class="certificados__game"> <!-- Container Design-->
                             <button class="btn btn--game btm--cert" type="button" data-bs-toggle="collapse" data-bs-target="#certGame" aria-expanded="false" aria-controls="certGame">
-                                <p class="m-0">Diseño de juegos</p>
+                                <p class="m-0">Diseño de videojuegos</p>
                             </button>
                             <div class="collapse" id="certGame">
                                 <ul>
@@ -352,21 +364,21 @@
                 <button type="submit" class="btn btn--submit my-2 btn-lg w-100">Enviar</button>
             </form>
         </section>
-        <div class="gradiente__footer"></div>
     </main>
     <footer class="footer container-fluid d-flex flex-column pt-5 m-0">
+        <div class="gradiente__footer"></div>
         <div class="footer__sub-container d-flex flex-column flex-xxl-row">
             <div class="footer__brand d-flex flex-column text-center">
                 <p class="brand__tittle m-0">Amilcar Noel Alsina</p>
                 <p class="brand__sub-h my-2">Programador Front End</p>
             </div>
             <div class="footer__principal container-fluid d-flex flex-column flex-md-row">
-                <div class="d-flex flex-column m-0">
+                <div class="d-flex flex-column m-0 col-md-9">
                     <p class="footer__llamado m-0">Contactame</p>
                     <p class="my-1"> No dudes en trabajar conmigo para tu proximo proyecto. </p>
                     <p class="my-2">aamilcaru@gmail.com</p>
                 </div>
-                <div class="footer__redes-container container-fluid d-flex flex-column m-0 p-0">
+                <div class="footer__redes-container container-fluid d-flex flex-column m-0 p-0 col-md-3">
                     <p class="footer__redes text-start text-md-center">Sigueme</p>
                     <div class="d-flex flex-row justify-content-md-center">
                         <a href="https://github.com/Amil33" target="_blank" rel="noopener noreferrer" class="footer__icon-container">
@@ -385,7 +397,7 @@
             </a>
         </div>
         <div class="m-2 text-center">
-            <i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.
+            <p><i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.</p>
         </div>
     </footer>
     <!-- Fin del Footer -->
