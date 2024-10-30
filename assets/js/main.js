@@ -32,6 +32,15 @@
 //         }, 500);  // El tiempo puede ajustarse según la duración de la animación del carrusel
 //     });
 // });
+  //------------------------------------------------------//
+ //------------Sección del navbar ----------------------//
+//----------------------------------------------------//
+// JavaScript para cerrar el menú al hacer clic en un enlace
+document.querySelectorAll('.header__nav-list .nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('openMenu').checked = false;
+    });
+});
 
 
 

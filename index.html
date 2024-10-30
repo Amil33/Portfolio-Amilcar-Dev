@@ -44,18 +44,18 @@
     <title>Amilcar Portfolio</title>
     <link rel="icon" href="assets/images/programacionWebIcon.png" type="image/png">
 </head>
-    <div class="header__slider text-center">
-        <a class="navbar_brand p-0 m-0" href="#miFormulario">
+    <div class="header__slider d-flex justify-content-center align-items-center">
+        <a class="navbar_brand p-0 m-0" href="#contactame">
             <p class="p-1 m-0">"Dando vida a tus ideas online"</p>
         </a>
     </div>
     <header class="header sticky-top">
         <input type="checkbox" class="header__checkbox" id="openMenu">
         <label for="openMenu" class="header__open-nav-button" role="button">
-            <p><i class="fs-1 fas fa-bars"></i></p>
+            <p class="m-0 p-1"><i class="fs-1 fas fa-bars"></i></p>
         </label>
         <div class="header__nav d-lg-flex flex-lg-row justify-content-lg-end p-1">
-            <ul class="header__nav-list">
+            <ul class="header__nav-list p-0">
                 <li class="nav__item">
                     <a class="nav__link" href="#">
                         <p>Inicio</p>
@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="#miFormulario">
+                    <a class="nav__link" href="#contactame">
                         <p>Contáctame</p>
                     </a>
                 </li>
@@ -126,7 +126,7 @@
                 <p class="hero__llamado mb-1">
                     Trabajemos en tus próximos proyectos.
                 </p>
-                <a class="btn btn__contact d-inline-flex mt-2 justify-content-center align-items-center" href="#miFormulario">
+                <a class="btn btn__contact d-inline-flex mt-2 justify-content-center align-items-center" href="#contactame">
                     <i class="fas fa-laptop-code"></i>
                     <p class="m-0">Contactame</p>
                 </a>
@@ -356,42 +356,44 @@
                 </div>
             </div>
         </section>
-        <section class="form__container mb-5 m-auto">
-            <p class="fs-1 pt-3">Formulario de Contacto<p>
-            <form id="miFormulario" class="container p-0" novalidate>
-                <div class="d-flex flex-column flex-lg-row justify-content-around">
-                    <div class="form__nombre mb-3">
-                        <label for="nombre" class="form-label">Nombre o Empresa</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre o empresa" required aria-label="Nombre completo">
-                        <div class="invalid-feedback">
-                            Por favor, ingresa tu nombre o el de la empresa.
+        <section class="form__wrapper d-flex justify-content-center align-content-center" id="contactame">
+            <div class="form__container m-auto">
+                <p class="fs-1 pt-3">Formulario de Contacto<p>
+                <form id="miFormulario" class="container p-0" novalidate>
+                    <div class="d-flex flex-column flex-lg-row justify-content-around">
+                        <div class="form__nombre mb-3">
+                            <label for="nombre" class="form-label">Nombre o Empresa</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre o empresa" required aria-label="Nombre completo">
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu nombre o el de la empresa.
+                            </div>
+                        </div>
+                        <div class="form__email mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un correo electrónico válido.
+                            </div>
                         </div>
                     </div>
-                    <div class="form__email mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required aria-label="Correo electrónico">
+                    <div class="form__menssage mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escriba su mensaje" required aria-label="Mensaje"></textarea>
                         <div class="invalid-feedback">
-                            Por favor, introduce un correo electrónico válido.
+                            El mensaje no puede estar vacío.
                         </div>
                     </div>
-                </div>
-                <div class="form__menssage mb-3">
-                    <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="3" placeholder="Escriba su mensaje" required aria-label="Mensaje"></textarea>
-                    <div class="invalid-feedback">
-                        El mensaje no puede estar vacío.
+                    <!-- Honeypot (Campo oculto para bots) -->
+                    <div class="honeypot">
+                        <label for="website" class="form-label">Website (Dejar en blanco)</label>
+                        <input type="text" id="website" name="website" class="form-control" placeholder="No llenar este campo">
                     </div>
-                </div>
-                <!-- Honeypot (Campo oculto para bots) -->
-                <div class="honeypot">
-                    <label for="website" class="form-label">Website (Dejar en blanco)</label>
-                    <input type="text" id="website" name="website" class="form-control" placeholder="No llenar este campo">
-                </div>
-                <div id="mensajeExito" class="alert alert-success d-none" role="alert">
-                    ¡Mensaje enviado con éxito!
-                </div>
-                <button type="submit" class="btn btn--submit my-2 btn-lg w-100">Enviar</button>
-            </form>
+                    <div id="mensajeExito" class="alert alert-success d-none" role="alert">
+                        ¡Mensaje enviado con éxito!
+                    </div>
+                    <button type="submit" class="btn btn--submit my-2 mx-auto btn-lg w-100">Enviar</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer class="footer container-fluid d-flex flex-column pt-5 m-0">
@@ -399,7 +401,7 @@
         <div class="footer__sub-container d-flex flex-column flex-xxl-row">
             <div class="footer__brand d-flex flex-column text-center">
                 <p class="brand__tittle m-0">Amilcar Noel Alsina</p>
-                <p class="brand__sub-h my-2">Programador Front End</p>
+                <p class="brand__sub-h">Programador Front End</p>
             </div>
             <div class="footer__principal container-fluid d-flex flex-column flex-md-row">
                 <div class="d-flex flex-column m-0 col-md-9">
@@ -426,7 +428,7 @@
             </a>
         </div>
         <div class="m-2 text-center">
-            <p><i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.</p>
+            <p class="footer__copy"><i class="fas fa-copyright"></i> 2024 Amilcar Noel Alsina. Todos los derechos reservados.</p>
         </div>
     </footer>
     <!-- Fin del Footer -->

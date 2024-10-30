@@ -57,6 +57,9 @@ p , .tooltip {
 }
 /*--- Estilo básico de botón ---*/
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: clamp(2.25rem, 3vw, 3rem);
     max-width: 425px;
     padding: clamp(0.5rem, 3vw, 0,75rem) clamp(1rem, 2vw, 1.5rem);
@@ -70,6 +73,9 @@ p , .tooltip {
 .btn p {
     color: inherit;
 }
+.footer__copy {
+    text-shadow: 1px 1px 6px var(--color-bg);
+}
 
 /*============ Fin de las configuraciones globales ===============*/
 
@@ -80,27 +86,56 @@ p , .tooltip {
   /*=========================================*/
  /* ======== Seccion del navbar ============*/
 /*=========================================*/
+/* Slider */
 .header__slider {
-    height: 4rem;
+    height: 5rem;
     background: linear-gradient(to bottom, 
     var(--color-h) 0%,
     var(--color-primary) 30%,         
     var(--color-secundary) 80%,
     var(--color-bg) 100%);
 }
+.header__slider a {
+    text-decoration: none;
+}
+.header__slider p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.0650rem;
+    color: var(--color-p);
+    text-shadow: 2px 2px 4px var(--color-bg);
+    border-radius: 8px;
+    transition: color 1s ease, background-color 1s ease;
+}
+.header__slider p:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px var(--color-p);
+}
+/* fin del slider */
 .header {
     z-index: 10;
     height: 4rem;
-    z-index: 10;
     animation: 3s adaptNav both;
     animation-timeline: scroll();
     animation-range: 1rem 10rem;
 }
 .header__open-nav-button {
     position: absolute;
-    right: 2rem;
+    right: 1.5rem;
     z-index: 20;
+    margin-top: 0.5rem;
 }
+.header__open-nav-button p {
+    color: var(--color-p);
+    border: 2px solid var(--color-p);
+    border-radius: 8px;
+    animation: 3s adaptNav both;
+    animation-timeline: scroll();
+    animation-range: 1rem 10rem;
+}
+
 .header__checkbox {
     display: none;
 }
@@ -110,16 +145,45 @@ p , .tooltip {
     position: absolute;
     height: 100dvh;
     width: 100%;
-    top: 0;
-    margin-top: 30px;
+    margin-top: 4rem;   
     justify-content: flex-end;
     align-items: flex-start;
+    animation: 3s adaptNav both;
+    animation-timeline: scroll();
+    animation-range: 1rem 10rem;
+    color: var(--color-p);
+
 }
 .header__nav-list {
     display: flex;
     flex-direction: column;
-    height: 40dvh;
-
+    text-align: center;
+    margin: 2rem 1rem 0 0;
+    height: 50dvh;
+    list-style: none;
+    color: inherit;
+}
+.nav__item {
+    width: 150px;
+    color: inherit;
+}
+.nav__link {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+.nav__link p{
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: inherit;
+    text-shadow: 1px 1px 6px var(--color-p);
+    padding: 0.5rem;
+    transition: color 1s ease, background-color 1s ease;;
+}
+.nav__link p:hover {
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px var(--color-p);
 }
 .header__checkbox:checked ~ .header__nav {
     display: flex;
@@ -132,6 +196,7 @@ p , .tooltip {
     .header__nav {
         position: static;
         height: auto;
+        margin: 0;
         animation: 3s adaptNav both;
         animation-timeline: scroll();
         animation-range: 1rem 10rem;
@@ -139,11 +204,19 @@ p , .tooltip {
     .header__nav-list {
         flex-direction: row;
         height: auto;
-        gap: 1.5rem;
+        gap: 1rem;
         margin: 0;
     }
     .header__open-nav-button {
         display: none;
+    }
+}
+@media (min-width: 1024px) {
+    .hero__info-container {
+        margin: auto;
+    }
+    .nav__item {
+        width: auto;
     }
 }
 /* -- fin querys nav -- */
@@ -161,7 +234,7 @@ p , .tooltip {
     animation-timeline: scroll();
     animation-range: 1rem 10rem;
 } */
-.navbar-brand {
+/* .navbar-brand {
     color: inherit;
 }
 .navbar-brand p {
@@ -173,7 +246,7 @@ p , .tooltip {
     background-color: inherit;
     border-radius: 8px;
     transition: color 1s ease, background-color 1s ease;
-}
+} */
 .navbar-brand p:hover {
     background-color: var(--color-primary);
     color: var(--color-bg);
@@ -533,6 +606,9 @@ h2 {
   /*=========================================*/
  /* ======== Seccion de Footer =============*/
 /*=========================================*/
+.form__wrapper {
+    min-height: 60dvh;
+}
 .form__container {
     padding: 1rem;
     background-color: var(--color-secundary);
@@ -604,6 +680,9 @@ h2 {
 .footer__redes, .footer__llamado, .footer__brand {
     font-weight: var(--font-weight-medium);
     text-shadow: 2px 2px 8px var(--color-bg);
+}
+.brand__sub-h {
+    font-weight: var(--font-weight-regular);
 }
 .footer__icon-container {
     position: relative;
